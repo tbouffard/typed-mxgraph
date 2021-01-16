@@ -174,22 +174,22 @@ declare module 'mxgraph' {
     /**
      * Returns true if the shift key is pressed for the given event.
      */
-    static isShiftDown(evt: MouseEvent): boolean;
+    static isShiftDown(evt: KeyboardEvent | MouseEvent): boolean;
 
     /**
      * Returns true if the alt key is pressed for the given event.
      */
-    static isAltDown(evt: MouseEvent): boolean;
+    static isAltDown(evt: KeyboardEvent | MouseEvent): boolean;
 
     /**
      * Returns true if the control key is pressed for the given event.
      */
-    static isControlDown(evt: MouseEvent): boolean;
+    static isControlDown(evt: KeyboardEvent | MouseEvent): boolean;
 
     /**
      * Returns true if the meta key is pressed for the given event.
      */
-    static isMetaDown(evt: MouseEvent): boolean;
+    static isMetaDown(evt: KeyboardEvent | MouseEvent): boolean;
 
     /**
      * Returns the touch or mouse event that contains the mouse coordinates.
