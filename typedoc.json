@@ -1,0 +1,6 @@
+{
+  "name": "mxGraph Typescript Declarations",
+  "readme": "none",
+  "entryPoints": ["lib/mxClient.d.ts"],
+  "out": "./build/docs/api"
+}
