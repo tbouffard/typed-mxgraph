@@ -1,0 +1,953 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxConstraintHandler | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxconstrainthandler.html">mxConstraintHandler</a>
+				</li>
+			</ul>
+			<h1>Class mxConstraintHandler</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Handles constraints on connection targets. This class is in charge of
+							showing fixed points when the mouse is over a vertex and handles constraints
+						to establish new connections.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxConstraintHandler</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mxconstrainthandler.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#constraints" class="tsd-kind-icon">constraints</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#currentconstraint" class="tsd-kind-icon">current<wbr>Constraint</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#currentfocus" class="tsd-kind-icon">current<wbr>Focus</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#currentfocusarea" class="tsd-kind-icon">current<wbr>Focus<wbr>Area</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#currentpoint" class="tsd-kind-icon">current<wbr>Point</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#enabled" class="tsd-kind-icon">enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#focuspoints" class="tsd-kind-icon">focus<wbr>Points</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#graph" class="tsd-kind-icon">graph</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#highlightcolor" class="tsd-kind-icon">highlight<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxconstrainthandler.html#pointimage" class="tsd-kind-icon">point<wbr>Image</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#createhighlightshape" class="tsd-kind-icon">create<wbr>Highlight<wbr>Shape</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#destroyfocushighlight" class="tsd-kind-icon">destroy<wbr>Focus<wbr>Highlight</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#destroyicons" class="tsd-kind-icon">destroy<wbr>Icons</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#getcellforevent" class="tsd-kind-icon">get<wbr>Cell<wbr>For<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#getimageforconstraint" class="tsd-kind-icon">get<wbr>Image<wbr>For<wbr>Constraint</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#gettolerance" class="tsd-kind-icon">get<wbr>Tolerance</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#intersects" class="tsd-kind-icon">intersects</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#iseventignored" class="tsd-kind-icon">is<wbr>Event<wbr>Ignored</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#iskeepfocusevent" class="tsd-kind-icon">is<wbr>Keep<wbr>Focus<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#isstateignored" class="tsd-kind-icon">is<wbr>State<wbr>Ignored</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#redraw" class="tsd-kind-icon">redraw</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#reset" class="tsd-kind-icon">reset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#setenabled" class="tsd-kind-icon">set<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#setfocus" class="tsd-kind-icon">set<wbr>Focus</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxconstrainthandler.html#update" class="tsd-kind-icon">update</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Constraint<wbr>Handler<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a>, factoryMethod<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, target<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxconstrainthandler.html" class="tsd-signature-type" data-tsd-kind="Class">mxConstraintHandler</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L9">handler/mxConstraintHandler.d.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs an new constraint handler.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>graph: <a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Reference to the enclosing <a href="mxgraph.html">mxGraph</a>.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> factoryMethod: <span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, target<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, target<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>source: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+														</li>
+														<li>
+															<h5>target: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxconstrainthandler.html" class="tsd-signature-type" data-tsd-kind="Class">mxConstraintHandler</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="constraints" class="tsd-anchor"></a>
+					<h3>constraints</h3>
+					<div class="tsd-signature tsd-kind-icon">constraints<span class="tsd-signature-symbol">:</span> <a href="mxconnectionconstraint.html" class="tsd-signature-type" data-tsd-kind="Class">mxConnectionConstraint</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L59">handler/mxConstraintHandler.d.ts:59</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentconstraint" class="tsd-anchor"></a>
+					<h3>current<wbr>Constraint</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Constraint<span class="tsd-signature-symbol">:</span> <a href="mxconnectionconstraint.html" class="tsd-signature-type" data-tsd-kind="Class">mxConnectionConstraint</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L24">handler/mxConstraintHandler.d.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentfocus" class="tsd-anchor"></a>
+					<h3>current<wbr>Focus</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Focus<span class="tsd-signature-symbol">:</span> <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L45">handler/mxConstraintHandler.d.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentfocusarea" class="tsd-anchor"></a>
+					<h3>current<wbr>Focus<wbr>Area</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Focus<wbr>Area<span class="tsd-signature-symbol">:</span> <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L31">handler/mxConstraintHandler.d.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentpoint" class="tsd-anchor"></a>
+					<h3>current<wbr>Point</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Point<span class="tsd-signature-symbol">:</span> <a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L38">handler/mxConstraintHandler.d.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="enabled" class="tsd-anchor"></a>
+					<h3>enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L74">handler/mxConstraintHandler.d.ts:74</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if events are handled. Default is true.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="focuspoints" class="tsd-anchor"></a>
+					<h3>focus<wbr>Points</h3>
+					<div class="tsd-signature tsd-kind-icon">focus<wbr>Points<span class="tsd-signature-symbol">:</span> <a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L52">handler/mxConstraintHandler.d.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="graph" class="tsd-anchor"></a>
+					<h3>graph</h3>
+					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L69">handler/mxConstraintHandler.d.ts:69</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the enclosing <a href="mxgraph.html">mxGraph</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="highlightcolor" class="tsd-anchor"></a>
+					<h3>highlight<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">highlight<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L79">handler/mxConstraintHandler.d.ts:79</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies the color for the highlight. Default is <a href="mxconstants.html#default_valid_color">mxConstants.DEFAULT_VALID_COLOR</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pointimage" class="tsd-anchor"></a>
+					<h3>point<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">point<wbr>Image<span class="tsd-signature-symbol">:</span> <a href="mximage.html" class="tsd-signature-type" data-tsd-kind="Class">mxImage</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L64">handler/mxConstraintHandler.d.ts:64</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="mximage.html">mxImage</a> to be used as the image for fixed connection points.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createhighlightshape" class="tsd-anchor"></a>
+					<h3>create<wbr>Highlight<wbr>Shape</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Highlight<wbr>Shape<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxshape.html" class="tsd-signature-type" data-tsd-kind="Class">mxShape</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L174">handler/mxConstraintHandler.d.ts:174</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create the shape used to paint the highlight.</p>
+								</div>
+								<p>Returns true if the given icon intersects the given point.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxshape.html" class="tsd-signature-type" data-tsd-kind="Class">mxShape</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L184">handler/mxConstraintHandler.d.ts:184</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroy this handler.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroyfocushighlight" class="tsd-anchor"></a>
+					<h3>destroy<wbr>Focus<wbr>Highlight</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<wbr>Focus<wbr>Highlight<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L136">handler/mxConstraintHandler.d.ts:136</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroys the {@link focusHighlight} if one exists.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroyicons" class="tsd-anchor"></a>
+					<h3>destroy<wbr>Icons</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<wbr>Icons<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L131">handler/mxConstraintHandler.d.ts:131</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroys the {@link focusIcons} if they exist.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcellforevent" class="tsd-anchor"></a>
+					<h3>get<wbr>Cell<wbr>For<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Cell<wbr>For<wbr>Event<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a>, point<span class="tsd-signature-symbol">: </span><a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L147">handler/mxConstraintHandler.d.ts:147</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the cell for the given event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+								<li>
+									<h5>point: <a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getimageforconstraint" class="tsd-anchor"></a>
+					<h3>get<wbr>Image<wbr>For<wbr>Constraint</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Image<wbr>For<wbr>Constraint<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, constraint<span class="tsd-signature-symbol">: </span><a href="mxconnectionconstraint.html" class="tsd-signature-type" data-tsd-kind="Class">mxConnectionConstraint</a>, point<span class="tsd-signature-symbol">: </span><a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mximage.html" class="tsd-signature-type" data-tsd-kind="Class">mxImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L115">handler/mxConstraintHandler.d.ts:115</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the tolerance to be used for intersecting connection points.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>constraint: <a href="mxconnectionconstraint.html" class="tsd-signature-type" data-tsd-kind="Class">mxConnectionConstraint</a></h5>
+								</li>
+								<li>
+									<h5>point: <a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mximage.html" class="tsd-signature-type" data-tsd-kind="Class">mxImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettolerance" class="tsd-anchor"></a>
+					<h3>get<wbr>Tolerance</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Tolerance<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L110">handler/mxConstraintHandler.d.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the tolerance to be used for intersecting connection points. This
+									implementation returns <a href="mxgraph.html#tolerance">mxGraph.tolerance</a>.</p>
+								</div>
+								<p>Parameters:</p>
+								<p>me - <a href="mxmouseevent.html">mxMouseEvent</a> whose tolerance should be returned.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="intersects" class="tsd-anchor"></a>
+					<h3>intersects</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">intersects<span class="tsd-signature-symbol">(</span>icon<span class="tsd-signature-symbol">: </span><a href="mxshape.html" class="tsd-signature-type" data-tsd-kind="Class">mxShape</a>, mouse<span class="tsd-signature-symbol">: </span><a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a>, source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, existingEdge<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L179">handler/mxConstraintHandler.d.ts:179</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given icon intersects the given rectangle.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>icon: <a href="mxshape.html" class="tsd-signature-type" data-tsd-kind="Class">mxShape</a></h5>
+								</li>
+								<li>
+									<h5>mouse: <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></h5>
+								</li>
+								<li>
+									<h5>source: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+								<li>
+									<h5>existingEdge: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isenabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L85">handler/mxConstraintHandler.d.ts:85</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if events are handled. This implementation
+									returns <a href="mxconstrainthandler.html#enabled">enabled</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iseventignored" class="tsd-anchor"></a>
+					<h3>is<wbr>Event<wbr>Ignored</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Event<wbr>Ignored<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L121">handler/mxConstraintHandler.d.ts:121</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given <a href="mxmouseevent.html">mxMouseEvent</a> should be ignored in <a href="mxconstrainthandler.html#update">update</a>. This
+									implementation always returns false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+								<li>
+									<h5>source: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iskeepfocusevent" class="tsd-anchor"></a>
+					<h3>is<wbr>Keep<wbr>Focus<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Keep<wbr>Focus<wbr>Event<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L142">handler/mxConstraintHandler.d.ts:142</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the current focused state should not be changed for the given event.
+									This returns true if shift and alt are pressed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isstateignored" class="tsd-anchor"></a>
+					<h3>is<wbr>State<wbr>Ignored</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>State<wbr>Ignored<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L126">handler/mxConstraintHandler.d.ts:126</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given state should be ignored. This always returns false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>source: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="redraw" class="tsd-anchor"></a>
+					<h3>redraw</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">redraw<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L160">handler/mxConstraintHandler.d.ts:160</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transfers the focus to the given state as a source or target terminal. If
+										the handler is not enabled then the outline is painted, but the constraints
+									are ignored.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="reset" class="tsd-anchor"></a>
+					<h3>reset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L100">handler/mxConstraintHandler.d.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resets the state of this handler.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setenabled" class="tsd-anchor"></a>
+					<h3>set<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Enabled<span class="tsd-signature-symbol">(</span>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L95">handler/mxConstraintHandler.d.ts:95</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enables or disables event handling. This implementation
+									updates <a href="mxconstrainthandler.html#enabled">enabled</a>.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enabled: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean that specifies the new enabled state.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setfocus" class="tsd-anchor"></a>
+					<h3>set<wbr>Focus</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Focus<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a>, state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L167">handler/mxConstraintHandler.d.ts:167</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transfers the focus to the given state as a source or target terminal. If
+										the handler is not enabled then the outline is painted, but the constraints
+									are ignored.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>source: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="update" class="tsd-anchor"></a>
+					<h3>update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>me<span class="tsd-signature-symbol">: </span><a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a>, source<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, existingEdge<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, point<span class="tsd-signature-symbol">: </span><a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/handler/mxConstraintHandler.d.ts#L153">handler/mxConstraintHandler.d.ts:153</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Updates the state of this handler based on the given <a href="mxmouseevent.html">mxMouseEvent</a>.
+									Source is a boolean indicating if the cell is a source or target.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>me: <a href="mxmouseevent.html" class="tsd-signature-type" data-tsd-kind="Class">mxMouseEvent</a></h5>
+								</li>
+								<li>
+									<h5>source: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+								<li>
+									<h5>existingEdge: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+								<li>
+									<h5>point: <a href="mxpoint.html" class="tsd-signature-type" data-tsd-kind="Class">mxPoint</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mxconstrainthandler.html" class="tsd-kind-icon">mx<wbr>Constraint<wbr>Handler</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#constraints" class="tsd-kind-icon">constraints</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#currentconstraint" class="tsd-kind-icon">current<wbr>Constraint</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#currentfocus" class="tsd-kind-icon">current<wbr>Focus</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#currentfocusarea" class="tsd-kind-icon">current<wbr>Focus<wbr>Area</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#currentpoint" class="tsd-kind-icon">current<wbr>Point</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#enabled" class="tsd-kind-icon">enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#focuspoints" class="tsd-kind-icon">focus<wbr>Points</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#graph" class="tsd-kind-icon">graph</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#highlightcolor" class="tsd-kind-icon">highlight<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#pointimage" class="tsd-kind-icon">point<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#createhighlightshape" class="tsd-kind-icon">create<wbr>Highlight<wbr>Shape</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#destroyfocushighlight" class="tsd-kind-icon">destroy<wbr>Focus<wbr>Highlight</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#destroyicons" class="tsd-kind-icon">destroy<wbr>Icons</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#getcellforevent" class="tsd-kind-icon">get<wbr>Cell<wbr>For<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#getimageforconstraint" class="tsd-kind-icon">get<wbr>Image<wbr>For<wbr>Constraint</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#gettolerance" class="tsd-kind-icon">get<wbr>Tolerance</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#intersects" class="tsd-kind-icon">intersects</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#iseventignored" class="tsd-kind-icon">is<wbr>Event<wbr>Ignored</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#iskeepfocusevent" class="tsd-kind-icon">is<wbr>Keep<wbr>Focus<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#isstateignored" class="tsd-kind-icon">is<wbr>State<wbr>Ignored</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#redraw" class="tsd-kind-icon">redraw</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#reset" class="tsd-kind-icon">reset</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#setenabled" class="tsd-kind-icon">set<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#setfocus" class="tsd-kind-icon">set<wbr>Focus</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxconstrainthandler.html#update" class="tsd-kind-icon">update</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

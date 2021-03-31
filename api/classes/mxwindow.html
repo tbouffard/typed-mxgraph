@@ -1,0 +1,1758 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxWindow | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxwindow.html">mxWindow</a>
+				</li>
+			</ul>
+			<h1>Class mxWindow</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Basic window inside a document.</p>
+					</div>
+					<p>Creating a simple window.</p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">tb</span><span style="color: #000000"> = </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #795E26">createElement</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;div&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">wnd</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxWindow</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Title&#039;</span><span style="color: #000000">, </span><span style="color: #001080">tb</span><span style="color: #000000">, </span><span style="color: #098658">100</span><span style="color: #000000">, </span><span style="color: #098658">100</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">, </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+<span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">setVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+</code></pre>
+							<p>Creating a window that contains an iframe.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">frame</span><span style="color: #000000"> = </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #795E26">createElement</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;iframe&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">frame</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;width&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;192px&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">frame</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;height&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;172px&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">frame</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;src&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;http://www.example.com/&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">frame</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">backgroundColor</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;white&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">w</span><span style="color: #000000"> = </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">.</span><span style="color: #001080">clientWidth</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">h</span><span style="color: #000000"> = (</span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000"> || </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">documentElement</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">wnd</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxWindow</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Title&#039;</span><span style="color: #000000">, </span><span style="color: #001080">frame</span><span style="color: #000000">, (</span><span style="color: #001080">w</span><span style="color: #000000">-</span><span style="color: #098658">200</span><span style="color: #000000">)/</span><span style="color: #098658">2</span><span style="color: #000000">, (</span><span style="color: #001080">h</span><span style="color: #000000">-</span><span style="color: #098658">200</span><span style="color: #000000">)/</span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">, </span><span style="color: #098658">200</span><span style="color: #000000">);</span>
+<span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">setVisible</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+</code></pre>
+							<p>To limit the movement of a window, eg. to keep it from being moved beyond
+							the top, left corner the following method can be overridden (recommended):</p>
+							<pre><code class="language-javascript"><span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">setLocation</span><span style="color: #000000">(</span><span style="color: #001080">x</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">x</span><span style="color: #000000"> = </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">x</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">y</span><span style="color: #000000"> = </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">setLocation</span><span style="color: #000000">.</span><span style="color: #795E26">apply</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">arguments</span><span style="color: #000000">);</span>
+<span style="color: #000000">};</span>
+</code></pre>
+							<p>Or the following event handler can be used:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">addListener</span><span style="color: #000000">(</span><span style="color: #001080">mxEvent</span><span style="color: #000000">.</span><span style="color: #0070C1">MOVE</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">e</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">setLocation</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">getX</span><span style="color: #000000">()), </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">wnd</span><span style="color: #000000">.</span><span style="color: #795E26">getY</span><span style="color: #000000">()));</span>
+<span style="color: #000000">});</span>
+</code></pre>
+							<p>To keep a window inside the current window:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #001080">mxEvent</span><span style="color: #000000">.</span><span style="color: #795E26">addListener</span><span style="color: #000000">(</span><span style="color: #001080">window</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;resize&#039;</span><span style="color: #000000">, </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">()</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">iw</span><span style="color: #000000"> = </span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">innerWidth</span><span style="color: #000000"> || </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">documentElement</span><span style="color: #000000">.</span><span style="color: #001080">clientWidth</span><span style="color: #000000"> || </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">.</span><span style="color: #001080">clientWidth</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ih</span><span style="color: #000000"> = </span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">innerHeight</span><span style="color: #000000"> || </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">documentElement</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000"> || </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">x</span><span style="color: #000000"> = </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #795E26">getX</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">y</span><span style="color: #000000"> = </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #795E26">getY</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">x</span><span style="color: #000000"> + </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">table</span><span style="color: #000000">.</span><span style="color: #001080">clientWidth</span><span style="color: #000000"> &gt; </span><span style="color: #001080">iw</span><span style="color: #000000">)</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">x</span><span style="color: #000000"> = </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">iw</span><span style="color: #000000"> - </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">table</span><span style="color: #000000">.</span><span style="color: #001080">clientWidth</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">y</span><span style="color: #000000"> + </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">table</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000"> &gt; </span><span style="color: #001080">ih</span><span style="color: #000000">)</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">y</span><span style="color: #000000"> = </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">max</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">ih</span><span style="color: #000000"> - </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">table</span><span style="color: #000000">.</span><span style="color: #001080">clientHeight</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #795E26">getX</span><span style="color: #000000">() != </span><span style="color: #001080">x</span><span style="color: #000000"> || </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #795E26">getY</span><span style="color: #000000">() != </span><span style="color: #001080">y</span><span style="color: #000000">)</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #795E26">setLocation</span><span style="color: #000000">(</span><span style="color: #001080">x</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}));</span>
+</code></pre>
+							<a href="#event-mxeventmove_start" id="event-mxeventmove_start" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.MOVE_START</h3>
+							</a>
+							<p>Fires before the window is moved. The <code>event</code> property contains
+							the corresponding mouse event.</p>
+							<a href="#event-mxeventmove" id="event-mxeventmove" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.MOVE</h3>
+							</a>
+							<p>Fires while the window is being moved. The <code>event</code> property
+							contains the corresponding mouse event.</p>
+							<a href="#event-mxeventmove_end" id="event-mxeventmove_end" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.MOVE_END</h3>
+							</a>
+							<p>Fires after the window is moved. The <code>event</code> property contains
+							the corresponding mouse event.</p>
+							<a href="#event-mxeventresize_start" id="event-mxeventresize_start" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.RESIZE_START</h3>
+							</a>
+							<p>Fires before the window is resized. The <code>event</code> property contains
+							the corresponding mouse event.</p>
+							<a href="#event-mxeventresize" id="event-mxeventresize" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.RESIZE</h3>
+							</a>
+							<p>Fires while the window is being resized. The <code>event</code> property
+							contains the corresponding mouse event.</p>
+							<a href="#event-mxeventresize_end" id="event-mxeventresize_end" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.RESIZE_END</h3>
+							</a>
+							<p>Fires after the window is resized. The <code>event</code> property contains
+							the corresponding mouse event.</p>
+							<a href="#event-mxeventmaximize" id="event-mxeventmaximize" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.MAXIMIZE</h3>
+							</a>
+							<p>Fires after the window is maximized. The <code>event</code> property
+							contains the corresponding mouse event.</p>
+							<a href="#event-mxeventminimize" id="event-mxeventminimize" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.MINIMIZE</h3>
+							</a>
+							<p>Fires after the window is minimized. The <code>event</code> property
+							contains the corresponding mouse event.</p>
+							<a href="#event-mxeventnormalize" id="event-mxeventnormalize" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.NORMALIZE</h3>
+							</a>
+							<p>Fires after the window is normalized, that is, it returned from
+								maximized or minimized state. The <code>event</code> property contains the
+							corresponding mouse event.</p>
+							<a href="#event-mxeventactivate" id="event-mxeventactivate" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.ACTIVATE</h3>
+							</a>
+							<p>Fires after a window is activated. The <code>previousWindow</code> property
+							contains the previous window. The event sender is the active window.</p>
+							<a href="#event-mxeventshow" id="event-mxeventshow" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.SHOW</h3>
+							</a>
+							<p>Fires after the window is shown. This event has no properties.</p>
+							<a href="#event-mxeventhide" id="event-mxeventhide" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.HIDE</h3>
+							</a>
+							<p>Fires after the window is hidden. This event has no properties.</p>
+							<a href="#event-mxeventclose" id="event-mxeventclose" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.CLOSE</h3>
+							</a>
+							<p>Fires before the window is closed. The <code>event</code> property contains
+							the corresponding mouse event.</p>
+							<a href="#event-mxeventdestroy" id="event-mxeventdestroy" style="color: inherit; text-decoration: none;">
+								<h3>Event: mxEvent.DESTROY</h3>
+							</a>
+							<p>Fires before the window is destroyed. This event has no properties.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="mxeventsource.html" class="tsd-signature-type" data-tsd-kind="Class">mxEventSource</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">mxWindow</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="mxwindow.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#closeimage" class="tsd-kind-icon">close<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#content" class="tsd-kind-icon">content</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#contentheightcorrection" class="tsd-kind-icon">content<wbr>Height<wbr>Correction</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#destroyonclose" class="tsd-kind-icon">destroy<wbr>OnClose</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#eventlisteners" class="tsd-kind-icon">event<wbr>Listeners</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#eventsource" class="tsd-kind-icon">event<wbr>Source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#eventsenabled" class="tsd-kind-icon">events<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#maximizeimage" class="tsd-kind-icon">maximize<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#minimizeimage" class="tsd-kind-icon">minimize<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#minimumsize" class="tsd-kind-icon">minimum<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#normalizeimage" class="tsd-kind-icon">normalize<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#resizeimage" class="tsd-kind-icon">resize<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxwindow.html#visible" class="tsd-kind-icon">visible</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#activate" class="tsd-kind-icon">activate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#fireevent" class="tsd-kind-icon">fire<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#fit" class="tsd-kind-icon">fit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#getelement" class="tsd-kind-icon">get<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#geteventsource" class="tsd-kind-icon">get<wbr>Event<wbr>Source</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#getminimumsize" class="tsd-kind-icon">get<wbr>Minimum<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#getx" class="tsd-kind-icon">getX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#gety" class="tsd-kind-icon">getY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#hide" class="tsd-kind-icon">hide</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#installclosehandler" class="tsd-kind-icon">install<wbr>Close<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#installmaximizehandler" class="tsd-kind-icon">install<wbr>Maximize<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#installminimizehandler" class="tsd-kind-icon">install<wbr>Minimize<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#installmovehandler" class="tsd-kind-icon">install<wbr>Move<wbr>Handler</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#iseventsenabled" class="tsd-kind-icon">is<wbr>Events<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#isresizable" class="tsd-kind-icon">is<wbr>Resizable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setclosable" class="tsd-kind-icon">set<wbr>Closable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#seteventsource" class="tsd-kind-icon">set<wbr>Event<wbr>Source</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="mxwindow.html#seteventsenabled" class="tsd-kind-icon">set<wbr>Events<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setimage" class="tsd-kind-icon">set<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setlocation" class="tsd-kind-icon">set<wbr>Location</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setmaximizable" class="tsd-kind-icon">set<wbr>Maximizable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setminimizable" class="tsd-kind-icon">set<wbr>Minimizable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setresizable" class="tsd-kind-icon">set<wbr>Resizable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setscrollable" class="tsd-kind-icon">set<wbr>Scrollable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setsize" class="tsd-kind-icon">set<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#settitle" class="tsd-kind-icon">set<wbr>Title</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxwindow.html#show" class="tsd-kind-icon">show</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Window<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, minimizable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, movable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, replaceNode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HTMLHRElement</span>, style<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxwindow.html" class="tsd-signature-type" data-tsd-kind="Class">mxWindow</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L152">util/mxWindow.d.ts:152</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs a new window with the given dimension and title to display
+										the specified content. The window elements use the given style as a
+										prefix for the classnames of the respective window elements, namely,
+										the window title and window pane. The respective postfixes are appended
+									to the given stylename as follows:</p>
+								</div>
+								<p>  style - Base style for the window.
+									style+Title - Style for the window title.
+								style+Pane - Style for the window pane.</p>
+								<p>The default value for style is mxWindow, resulting in the following
+									classnames for the window elements: mxWindow, mxWindowTitle and
+								mxWindowPane.</p>
+								<p>If replaceNode is given then the window replaces the given DOM node in
+								the document.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the new window.</p>
+									</div>
+								</li>
+								<li>
+									<h5>content: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>DOM node that is used as the window content.</p>
+									</div>
+								</li>
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>X-coordinate of the window location.</p>
+									</div>
+								</li>
+								<li>
+									<h5>y: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Y-coordinate of the window location.</p>
+									</div>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Width of the window.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> height: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional height of the window. Default is to match the height
+										of the content at the specified width.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> minimizable: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional boolean indicating if the window is minimizable.
+										Default is true.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> movable: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional boolean indicating if the window is movable. Default
+										is true.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> replaceNode: <span class="tsd-signature-type">HTMLHRElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional DOM node that the window should replace.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> style: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional base classname for the window elements. Default is
+										mxWindow.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxwindow.html" class="tsd-signature-type" data-tsd-kind="Class">mxWindow</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="closeimage" class="tsd-anchor"></a>
+					<h3>close<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">close<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L203">util/mxWindow.d.ts:203</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the image to be used for the close icon in the titlebar.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="content" class="tsd-anchor"></a>
+					<h3>content</h3>
+					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L256">util/mxWindow.d.ts:256</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the DOM node that represents the window content.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="contentheightcorrection" class="tsd-anchor"></a>
+					<h3>content<wbr>Height<wbr>Correction</h3>
+					<div class="tsd-signature tsd-kind-icon">content<wbr>Height<wbr>Correction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L246">util/mxWindow.d.ts:246</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines the correction factor for computing the height of the contentWrapper.
+							Default is 6 for IE 7/8 standards mode and 2 for all other browsers and modes.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="destroyonclose" class="tsd-anchor"></a>
+					<h3>destroy<wbr>OnClose</h3>
+					<div class="tsd-signature tsd-kind-icon">destroy<wbr>OnClose<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L240">util/mxWindow.d.ts:240</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if the window should be destroyed when it is closed. If this
+							is false then the window is hidden using <setVisible>. Default is true.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="eventlisteners" class="tsd-anchor"></a>
+					<h3>event<wbr>Listeners</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Listeners<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#eventlisteners">eventListeners</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L12">util/mxEventSource.d.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Variable: eventListeners</p>
+						</div>
+						<p>Holds the event names and associated listeners in an array. The array
+							contains the event name followed by the respective listener for each
+						registered listener.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="eventsource" class="tsd-anchor"></a>
+					<h3>event<wbr>Source</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#eventsource">eventSource</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L26">util/mxEventSource.d.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Variable: eventSource</p>
+						</div>
+						<p>Optional source for events. Default is null.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="eventsenabled" class="tsd-anchor"></a>
+					<h3>events<wbr>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">events<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#eventsenabled">eventsEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L19">util/mxEventSource.d.ts:19</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Variable: eventsEnabled</p>
+						</div>
+						<p>Specifies if events can be fired. Default is true.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="maximizeimage" class="tsd-anchor"></a>
+					<h3>maximize<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">maximize<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L218">util/mxWindow.d.ts:218</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the image to be used for the maximize icon in the titlebar.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="minimizeimage" class="tsd-anchor"></a>
+					<h3>minimize<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">minimize<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L208">util/mxWindow.d.ts:208</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the image to be used for the minimize icon in the titlebar.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="minimumsize" class="tsd-anchor"></a>
+					<h3>minimum<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">minimum<wbr>Size<span class="tsd-signature-symbol">:</span> <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L234">util/mxWindow.d.ts:234</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><mxRectangle> that specifies the minimum width and height of the window.
+							Default is (50, 40).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="normalizeimage" class="tsd-anchor"></a>
+					<h3>normalize<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">normalize<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L213">util/mxWindow.d.ts:213</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the image to be used for the normalize icon in the titlebar.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="resizeimage" class="tsd-anchor"></a>
+					<h3>resize<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">resize<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L223">util/mxWindow.d.ts:223</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the image to be used for the resize icon.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L251">util/mxWindow.d.ts:251</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the DOM node (TD) that contains the title.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3>visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L228">util/mxWindow.d.ts:228</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Boolean flag that represents the visible state of the window.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="activate" class="tsd-anchor"></a>
+					<h3>activate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L277">util/mxWindow.d.ts:277</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Puts the window on top of all other windows.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, funct<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#addlistener">addListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L64">util/mxEventSource.d.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: addListener</p>
+								</div>
+								<p>Binds the specified function to the given event name. If no event name
+								is given, then the listener is registered for all events.</p>
+								<p>The parameters of the listener are the sender and an <mxEventObject>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>funct: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L409">util/mxWindow.d.ts:409</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroys the window and removes all associated resources. Fires a
+									<destroy> event prior to destroying the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="fireevent" class="tsd-anchor"></a>
+					<h3>fire<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">fire<wbr>Event<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><a href="mxeventobject.html" class="tsd-signature-type" data-tsd-kind="Class">mxEventObject</a>, sender<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#fireevent">fireEvent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L92">util/mxEventSource.d.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: fireEvent</p>
+								</div>
+								<p>Dispatches the given event to the listeners which are registered for
+									the event. The sender argument is optional. The current execution scope
+								(&quot;this&quot;) is used for the listener invocation (see &lt;mxUtils.bind&gt;).</p>
+								<p>Example:</p>
+								<p>(code)
+									fireEvent(new mxEventObject(&quot;eventName&quot;, key1, val1, .., keyN, valN))
+								(end)</p>
+								<p>Parameters:</p>
+								<p>evt - <mxEventObject> that represents the event.
+										sender - Optional sender to be passed to the listener. Default value is
+								the return value of <getEventSource>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>evt: <a href="mxeventobject.html" class="tsd-signature-type" data-tsd-kind="Class">mxEventObject</a></h5>
+								</li>
+								<li>
+									<h5>sender: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fit" class="tsd-anchor"></a>
+					<h3>fit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L287">util/mxWindow.d.ts:287</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Makes sure the window is inside the client area of the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getelement" class="tsd-anchor"></a>
+					<h3>get<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Element<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L282">util/mxWindow.d.ts:282</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returuns the outermost DOM node that makes up the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="geteventsource" class="tsd-anchor"></a>
+					<h3>get<wbr>Event<wbr>Source</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Event<wbr>Source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#geteventsource">getEventSource</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L47">util/mxEventSource.d.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: getEventSource</p>
+								</div>
+								<p>Returns <eventSource>.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getminimumsize" class="tsd-anchor"></a>
+					<h3>get<wbr>Minimum<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Minimum<wbr>Size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L323">util/mxWindow.d.ts:323</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an <mxRectangle> that specifies the size for the minimized window.
+											A width or height of 0 means keep the existing width or height. This
+									implementation returns the height of the window title and keeps the width.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getx" class="tsd-anchor"></a>
+					<h3>getX</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">getX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L353">util/mxWindow.d.ts:353</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the current position on the x-axis.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gety" class="tsd-anchor"></a>
+					<h3>getY</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">getY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L358">util/mxWindow.d.ts:358</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the current position on the y-axis.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hide" class="tsd-anchor"></a>
+					<h3>hide</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">hide<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L403">util/mxWindow.d.ts:403</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hides the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="init" class="tsd-anchor"></a>
+					<h3>init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, style<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L261">util/mxWindow.d.ts:261</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializes the DOM tree that represents the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>y: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>style: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="installclosehandler" class="tsd-anchor"></a>
+					<h3>install<wbr>Close<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">install<wbr>Close<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L364">util/mxWindow.d.ts:364</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds the <closeImage> as a new image node in <closeImg> and installs the
+									<close> event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="installmaximizehandler" class="tsd-anchor"></a>
+					<h3>install<wbr>Maximize<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">install<wbr>Maximize<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L338">util/mxWindow.d.ts:338</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Installs the event listeners required for maximizing the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="installminimizehandler" class="tsd-anchor"></a>
+					<h3>install<wbr>Minimize<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">install<wbr>Minimize<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L328">util/mxWindow.d.ts:328</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Installs the event listeners required for minimizing the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="installmovehandler" class="tsd-anchor"></a>
+					<h3>install<wbr>Move<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">install<wbr>Move<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L343">util/mxWindow.d.ts:343</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Installs the event listeners required for moving the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="iseventsenabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Events<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Events<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#iseventsenabled">isEventsEnabled</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L33">util/mxEventSource.d.ts:33</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: isEventsEnabled</p>
+								</div>
+								<p>Returns <eventsEnabled>.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isresizable" class="tsd-anchor"></a>
+					<h3>is<wbr>Resizable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Resizable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L292">util/mxWindow.d.ts:292</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the window is resizable.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isvisible" class="tsd-anchor"></a>
+					<h3>is<wbr>Visible</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L385">util/mxWindow.d.ts:385</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the window is visible.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="removelistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>funct<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#removelistener">removeListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L71">util/mxEventSource.d.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: removeListener</p>
+								</div>
+								<p>Removes all occurrences of the given listener from <eventListeners>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>funct: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setclosable" class="tsd-anchor"></a>
+					<h3>set<wbr>Closable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Closable<span class="tsd-signature-symbol">(</span>closable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L380">util/mxWindow.d.ts:380</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the image associated with the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>closable: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean specifying if the window should be closable.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="seteventsource" class="tsd-anchor"></a>
+					<h3>set<wbr>Event<wbr>Source</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Event<wbr>Source<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#seteventsource">setEventSource</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L54">util/mxEventSource.d.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: setEventSource</p>
+								</div>
+								<p>Sets <eventSource>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="seteventsenabled" class="tsd-anchor"></a>
+					<h3>set<wbr>Events<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Events<wbr>Enabled<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="mxeventsource.html">mxEventSource</a>.<a href="mxeventsource.html#seteventsenabled">setEventsEnabled</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxEventSource.d.ts#L40">util/mxEventSource.d.ts:40</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: setEventsEnabled</p>
+								</div>
+								<p>Sets <eventsEnabled>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setimage" class="tsd-anchor"></a>
+					<h3>set<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Image<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L372">util/mxWindow.d.ts:372</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the image associated with the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>image: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>URL of the image to be used.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlocation" class="tsd-anchor"></a>
+					<h3>set<wbr>Location</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Location<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L348">util/mxWindow.d.ts:348</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the upper, left corner of the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>y: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setmaximizable" class="tsd-anchor"></a>
+					<h3>set<wbr>Maximizable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Maximizable<span class="tsd-signature-symbol">(</span>maximizable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L333">util/mxWindow.d.ts:333</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets if the window is maximizable.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>maximizable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setminimizable" class="tsd-anchor"></a>
+					<h3>set<wbr>Minimizable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Minimizable<span class="tsd-signature-symbol">(</span>minimizable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L316">util/mxWindow.d.ts:316</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets if the window is minimizable.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>minimizable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setresizable" class="tsd-anchor"></a>
+					<h3>set<wbr>Resizable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Resizable<span class="tsd-signature-symbol">(</span>resizable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L306">util/mxWindow.d.ts:306</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets if the window should be resizable. To avoid interference with some
+										built-in features of IE10 and later, the use of the following code is
+									recommended if there are resizable <mxWindow>s in the page:</p>
+								</div>
+								<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">mxClient</span><span style="color: #000000">.</span><span style="color: #0070C1">IS_POINTER</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">msTouchAction</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;none&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resizable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setscrollable" class="tsd-anchor"></a>
+					<h3>set<wbr>Scrollable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Scrollable<span class="tsd-signature-symbol">(</span>scrollable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L272">util/mxWindow.d.ts:272</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets if the window contents should be scrollable.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scrollable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setsize" class="tsd-anchor"></a>
+					<h3>set<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Size<span class="tsd-signature-symbol">(</span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L311">util/mxWindow.d.ts:311</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the size of the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="settitle" class="tsd-anchor"></a>
+					<h3>set<wbr>Title</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Title<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L267">util/mxWindow.d.ts:267</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the window title to the given string. HTML markup inside the title
+									will be escaped.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">HTMLElement</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setvisible" class="tsd-anchor"></a>
+					<h3>set<wbr>Visible</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Visible<span class="tsd-signature-symbol">(</span>visible<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L393">util/mxWindow.d.ts:393</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Shows or hides the window depending on the given flag.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>visible: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean indicating if the window should be made visible.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="show" class="tsd-anchor"></a>
+					<h3>show</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxWindow.d.ts#L398">util/mxWindow.d.ts:398</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Shows the window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mxwindow.html" class="tsd-kind-icon">mx<wbr>Window</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="mxwindow.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#closeimage" class="tsd-kind-icon">close<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#content" class="tsd-kind-icon">content</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#contentheightcorrection" class="tsd-kind-icon">content<wbr>Height<wbr>Correction</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#destroyonclose" class="tsd-kind-icon">destroy<wbr>OnClose</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#eventlisteners" class="tsd-kind-icon">event<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#eventsource" class="tsd-kind-icon">event<wbr>Source</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#eventsenabled" class="tsd-kind-icon">events<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#maximizeimage" class="tsd-kind-icon">maximize<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#minimizeimage" class="tsd-kind-icon">minimize<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#minimumsize" class="tsd-kind-icon">minimum<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#normalizeimage" class="tsd-kind-icon">normalize<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#resizeimage" class="tsd-kind-icon">resize<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxwindow.html#visible" class="tsd-kind-icon">visible</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#activate" class="tsd-kind-icon">activate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#fireevent" class="tsd-kind-icon">fire<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#fit" class="tsd-kind-icon">fit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#getelement" class="tsd-kind-icon">get<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#geteventsource" class="tsd-kind-icon">get<wbr>Event<wbr>Source</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#getminimumsize" class="tsd-kind-icon">get<wbr>Minimum<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#getx" class="tsd-kind-icon">getX</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#gety" class="tsd-kind-icon">getY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#hide" class="tsd-kind-icon">hide</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#init" class="tsd-kind-icon">init</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#installclosehandler" class="tsd-kind-icon">install<wbr>Close<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#installmaximizehandler" class="tsd-kind-icon">install<wbr>Maximize<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#installminimizehandler" class="tsd-kind-icon">install<wbr>Minimize<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#installmovehandler" class="tsd-kind-icon">install<wbr>Move<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#iseventsenabled" class="tsd-kind-icon">is<wbr>Events<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#isresizable" class="tsd-kind-icon">is<wbr>Resizable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setclosable" class="tsd-kind-icon">set<wbr>Closable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#seteventsource" class="tsd-kind-icon">set<wbr>Event<wbr>Source</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="mxwindow.html#seteventsenabled" class="tsd-kind-icon">set<wbr>Events<wbr>Enabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setimage" class="tsd-kind-icon">set<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setlocation" class="tsd-kind-icon">set<wbr>Location</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setmaximizable" class="tsd-kind-icon">set<wbr>Maximizable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setminimizable" class="tsd-kind-icon">set<wbr>Minimizable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setresizable" class="tsd-kind-icon">set<wbr>Resizable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setscrollable" class="tsd-kind-icon">set<wbr>Scrollable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setsize" class="tsd-kind-icon">set<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#settitle" class="tsd-kind-icon">set<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxwindow.html#show" class="tsd-kind-icon">show</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

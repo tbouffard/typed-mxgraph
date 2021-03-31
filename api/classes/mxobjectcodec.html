@@ -1,0 +1,1960 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxObjectCodec | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxobjectcodec.html">mxObjectCodec</a>
+				</li>
+			</ul>
+			<h1>Class mxObjectCodec</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Generic codec for JavaScript objects that implements a mapping between
+							JavaScript objects and XML nodes that maps each field or element to an
+						attribute or child node, and vice versa.</p>
+					</div>
+					<a href="#atomic-values" id="atomic-values" style="color: inherit; text-decoration: none;">
+						<h3>Atomic Values</h3>
+					</a>
+					<p>Consider the following example.</p>
+					<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">obj</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Object</span><span style="color: #000000">();</span>
+<span style="color: #001080">obj</span><span style="color: #000000">.</span><span style="color: #001080">foo</span><span style="color: #000000"> = </span><span style="color: #A31515">&quot;Foo&quot;</span><span style="color: #000000">;</span>
+<span style="color: #001080">obj</span><span style="color: #000000">.</span><span style="color: #001080">bar</span><span style="color: #000000"> = </span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">;</span>
+</code></pre>
+					<p>This object is encoded into an XML node using the following.</p>
+					<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxCodec</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000"> = </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">encode</span><span style="color: #000000">(</span><span style="color: #001080">obj</span><span style="color: #000000">);</span>
+</code></pre>
+					<p>The output of the encoding may be viewed using <a href="mxlog.html">mxLog</a> as follows.</p>
+					<pre><code class="language-javascript"><span style="color: #001080">mxLog</span><span style="color: #000000">.</span><span style="color: #795E26">show</span><span style="color: #000000">();</span>
+<span style="color: #001080">mxLog</span><span style="color: #000000">.</span><span style="color: #795E26">debug</span><span style="color: #000000">(</span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">getPrettyXml</span><span style="color: #000000">(</span><span style="color: #001080">node</span><span style="color: #000000">));</span>
+</code></pre>
+					<p>Finally, the result of the encoding looks as follows.</p>
+					<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #000000"> </span><span style="color: #FF0000">foo</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Foo&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">bar</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #800000">/&gt;</span>
+</code></pre>
+					<p>In the above output, the foo and bar fields have been mapped to attributes
+						with the same names, and the name of the constructor was used for the
+					nodename.</p>
+					<a href="#booleans" id="booleans" style="color: inherit; text-decoration: none;">
+						<h3>Booleans</h3>
+					</a>
+					<p>Since booleans are numbers in JavaScript, all boolean values are encoded
+						into 1 for true and 0 for false. The decoder also accepts the string true
+					and false for boolean values.</p>
+					<a href="#objects" id="objects" style="color: inherit; text-decoration: none;">
+						<h3>Objects</h3>
+					</a>
+					<p>The above scheme is applied to all atomic fields, that is, to all non-object
+						fields of an object. For object fields, a child node is created with a
+						special attribute that contains the fieldname. This special attribute is
+						called &quot;as&quot; and hence, as is a reserved word that should not be used for a
+					fieldname.</p>
+					<p>Consider the following example where foo is an object and bar is an atomic
+					property of foo.</p>
+					<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">obj</span><span style="color: #000000"> = {</span><span style="color: #001080">foo:</span><span style="color: #000000"> {</span><span style="color: #001080">bar:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">}};</span>
+</code></pre>
+					<p>This will be mapped to the following XML structure by mxObjectCodec.</p>
+					<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #000000"> </span><span style="color: #FF0000">bar</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">as</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #800000">/&gt;</span>
+<span style="color: #800000">&lt;/</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+</code></pre>
+					<p>In the above output, the inner Object node contains the as-attribute that
+						specifies the fieldname in the enclosing object. That is, the field foo was
+					mapped to a child node with an as-attribute that has the value foo.</p>
+					<a href="#arrays" id="arrays" style="color: inherit; text-decoration: none;">
+						<h3>Arrays</h3>
+					</a>
+					<p>Arrays are special objects that are either associative, in which case each
+						key, value pair is treated like a field where the key is the fieldname, or
+						they are a sequence of atomic values and objects, which is mapped to a
+						sequence of child nodes. For object elements, the above scheme is applied
+						without the use of the special as-attribute for creating each child. For
+						atomic elements, a special add-node is created with the value stored in the
+					value-attribute.</p>
+					<p>For example, the following array contains one atomic value and one object
+						with a field called bar. Furthermore it contains two associative entries
+					called bar with an atomic value, and foo with an object value.</p>
+					<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">obj</span><span style="color: #000000"> = [</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">, {</span><span style="color: #001080">bar:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">}];</span>
+<span style="color: #001080">obj</span><span style="color: #000000">[</span><span style="color: #A31515">&quot;bar&quot;</span><span style="color: #000000">] = </span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">;</span>
+<span style="color: #001080">obj</span><span style="color: #000000">[</span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #000000">] = {</span><span style="color: #001080">bar:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000">};</span>
+</code></pre>
+					<p>This array is represented by the following XML nodes.</p>
+					<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Array</span><span style="color: #000000"> </span><span style="color: #FF0000">bar</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;add</span><span style="color: #000000"> </span><span style="color: #FF0000">value</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #000000"> </span><span style="color: #FF0000">bar</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #000000"> </span><span style="color: #FF0000">bar</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;Bar&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">as</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #800000">/&gt;</span>
+<span style="color: #800000">&lt;/</span><span style="color: #267F99">Array</span><span style="color: #800000">&gt;</span>
+</code></pre>
+					<p>The Array node name is the name of the constructor. The additional
+						as-attribute in the last child contains the key of the associative entry,
+						whereas the second last child is part of the array sequence and does not
+					have an as-attribute.</p>
+					<a href="#references" id="references" style="color: inherit; text-decoration: none;">
+						<h3>References</h3>
+					</a>
+					<p>Objects may be represented as child nodes or attributes with ID values,
+						which are used to lookup the object in a table within <a href="mxcodec.html">mxCodec</a>. The
+						<a href="mxobjectcodec.html#isreference">isReference</a> function is in charge of deciding if a specific field should
+						be encoded as a reference or not. Its default implementation returns true if
+						the fieldname is in <a href="mxobjectcodec.html#idrefs">idrefs</a>, an array of strings that is used to configure
+					the <a href="mxobjectcodec.html">mxObjectCodec</a>.</p>
+					<p>Using this approach, the mapping does not guarantee that the referenced
+						object itself exists in the document. The fields that are encoded as
+						references must be carefully chosen to make sure all referenced objects
+					exist in the document, or may be resolved by some other means if necessary.</p>
+					<p>For example, in the case of the graph model all cells are stored in a tree
+						whose root is referenced by the model&#39;s root field. A tree is a structure
+						that is well suited for an XML representation, however, the additional edges
+						in the graph model have a reference to a source and target cell, which are
+						also contained in the tree. To handle this case, the source and target cell
+						of an edge are treated as references, whereas the children are treated as
+						objects. Since all cells are contained in the tree and no edge references a
+						source or target outside the tree, this setup makes sure all referenced
+					objects are contained in the document.</p>
+					<p>In the case of a tree structure we must further avoid infinite recursion by
+						ignoring the parent reference of each child. This is done by returning true
+						in <a href="mxobjectcodec.html#isexcluded">isExcluded</a>, whose default implementation uses the array of excluded
+					fieldnames passed to the mxObjectCodec constructor.</p>
+					<p>References are only used for cells in mxGraph. For defining other
+						referencable object types, the codec must be able to work out the ID of an
+						object. This is done by implementing <a href="mxcodec.html#reference">mxCodec.reference</a>. For decoding a
+						reference, the XML node with the respective id-attribute is fetched from the
+						document, decoded, and stored in a lookup table for later reference. For
+					looking up external objects, <a href="mxcodec.html#lookup">mxCodec.lookup</a> may be implemented.</p>
+					<a href="#expressions" id="expressions" style="color: inherit; text-decoration: none;">
+						<h3>Expressions</h3>
+					</a>
+					<p>For decoding JavaScript expressions, the add-node may be used with a text
+						content that contains the JavaScript expression. For example, the following
+						creates a field called foo in the enclosing object and assigns it the value
+					of <a href="mxconstants.html#align_left">mxConstants.ALIGN_LEFT</a>.</p>
+					<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;add</span><span style="color: #000000"> </span><span style="color: #FF0000">as</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;foo&quot;</span><span style="color: #800000">&gt;</span><span style="color: #000000">mxConstants.ALIGN_LEFT</span><span style="color: #800000">&lt;/add&gt;</span>
+<span style="color: #800000">&lt;/</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+</code></pre>
+					<p>The resulting object has a field called foo with the value &quot;left&quot;. Its XML
+					representation looks as follows.</p>
+					<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #000000"> </span><span style="color: #FF0000">foo</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;left&quot;</span><span style="color: #800000">/&gt;</span>
+</code></pre>
+					<p>This means the expression is evaluated at decoding time and the result of
+						the evaluation is stored in the respective field. Valid expressions are all
+						JavaScript expressions, including function definitions, which are mapped to
+					functions on the resulting object.</p>
+					<p>Expressions are only evaluated if <a href="mxobjectcodec.html#alloweval">allowEval</a> is true.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxObjectCodec</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mxobjectcodec.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxobjectcodec.html#exclude" class="tsd-kind-icon">exclude</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxobjectcodec.html#idrefs" class="tsd-kind-icon">idrefs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxobjectcodec.html#mapping" class="tsd-kind-icon">mapping</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxobjectcodec.html#reverse" class="tsd-kind-icon">reverse</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxobjectcodec.html#template" class="tsd-kind-icon">template</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="mxobjectcodec.html#alloweval" class="tsd-kind-icon">allow<wbr>Eval</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#addobjectvalue" class="tsd-kind-icon">add<wbr>Object<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#afterdecode" class="tsd-kind-icon">after<wbr>Decode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#afterencode" class="tsd-kind-icon">after<wbr>Encode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#beforedecode" class="tsd-kind-icon">before<wbr>Decode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#beforeencode" class="tsd-kind-icon">before<wbr>Encode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#clonetemplate" class="tsd-kind-icon">clone<wbr>Template</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#convertattributefromxml" class="tsd-kind-icon">convert<wbr>Attribute<wbr>From<wbr>Xml</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#convertattributetoxml" class="tsd-kind-icon">convert<wbr>Attribute<wbr>ToXml</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decode" class="tsd-kind-icon">decode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decodeattribute" class="tsd-kind-icon">decode<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decodeattributes" class="tsd-kind-icon">decode<wbr>Attributes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decodechild" class="tsd-kind-icon">decode<wbr>Child</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decodechildren" class="tsd-kind-icon">decode<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#decodenode" class="tsd-kind-icon">decode<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#encode" class="tsd-kind-icon">encode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#encodeobject" class="tsd-kind-icon">encode<wbr>Object</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#encodevalue" class="tsd-kind-icon">encode<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#getattributename" class="tsd-kind-icon">get<wbr>Attribute<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#getfieldname" class="tsd-kind-icon">get<wbr>Field<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#getfieldtemplate" class="tsd-kind-icon">get<wbr>Field<wbr>Template</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#isbooleanattribute" class="tsd-kind-icon">is<wbr>Boolean<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#isexcluded" class="tsd-kind-icon">is<wbr>Excluded</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#isignoredattribute" class="tsd-kind-icon">is<wbr>Ignored<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#isnumericattribute" class="tsd-kind-icon">is<wbr>Numeric<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#isreference" class="tsd-kind-icon">is<wbr>Reference</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#processinclude" class="tsd-kind-icon">process<wbr>Include</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#writeattribute" class="tsd-kind-icon">write<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#writecomplexattribute" class="tsd-kind-icon">write<wbr>Complex<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxobjectcodec.html#writeprimitiveattribute" class="tsd-kind-icon">write<wbr>Primitive<wbr>Attribute</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Object<wbr>Codec<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, exclude<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, idrefs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, mapping<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxobjectcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxObjectCodec</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L174">io/mxObjectCodec.d.ts:174</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs a new codec for the specified template object.
+										The variables in the optional exclude array are ignored by
+										the codec. Variables in the optional idrefs array are
+										turned into references in the XML. The optional mapping
+										may be used to map from variable names to XML attributes.
+									The argument is created as follows:</p>
+								</div>
+								<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mapping</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Object</span><span style="color: #000000">();</span>
+<span style="color: #001080">mapping</span><span style="color: #000000">[</span><span style="color: #A31515">&#039;variableName&#039;</span><span style="color: #000000">] = </span><span style="color: #A31515">&#039;attribute-name&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>template: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Prototypical instance of the object to be
+										encoded/decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> exclude: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional array of fieldnames to be ignored.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> idrefs: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional array of fieldnames to be converted to/from
+										references.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mapping: <span class="tsd-signature-symbol">{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional mapping from field- to attributenames.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxobjectcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxObjectCodec</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="exclude" class="tsd-anchor"></a>
+					<h3>exclude</h3>
+					<div class="tsd-signature tsd-kind-icon">exclude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L213">io/mxObjectCodec.d.ts:213</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array containing the variable names that should be
+							ignored by the codec.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="idrefs" class="tsd-anchor"></a>
+					<h3>idrefs</h3>
+					<div class="tsd-signature tsd-kind-icon">idrefs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L220">io/mxObjectCodec.d.ts:220</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array containing the variable names that should be
+								turned into or converted from references. See
+							<a href="mxcodec.html#getid">mxCodec.getId</a> and <a href="mxcodec.html#getobject">mxCodec.getObject</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mapping" class="tsd-anchor"></a>
+					<h3>mapping</h3>
+					<div class="tsd-signature tsd-kind-icon">mapping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L225">io/mxObjectCodec.d.ts:225</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maps from from fieldnames to XML attribute names.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="reverse" class="tsd-anchor"></a>
+					<h3>reverse</h3>
+					<div class="tsd-signature tsd-kind-icon">reverse<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L230">io/mxObjectCodec.d.ts:230</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maps from from XML attribute names to fieldnames.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="template" class="tsd-anchor"></a>
+					<h3>template</h3>
+					<div class="tsd-signature tsd-kind-icon">template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L207">io/mxObjectCodec.d.ts:207</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the template object associated with this codec.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="alloweval" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> allow<wbr>Eval</h3>
+					<div class="tsd-signature tsd-kind-icon">allow<wbr>Eval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L202">io/mxObjectCodec.d.ts:202</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Static global switch that specifies if expressions in arrays are allowed.
+							Default is false. NOTE: Enabling this carries a possible security risk.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>static</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addobjectvalue" class="tsd-anchor"></a>
+					<h3>add<wbr>Object<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Object<wbr>Value<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fieldname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, template<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L557">io/mxObjectCodec.d.ts:557</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the decoded child node as a value of the given object. If the
+										object is a map, then the value is added with the given fieldname as a
+										key. If the fieldname is not empty, then setFieldValue is called or
+										else, if the object is a collection, the value is added to the
+										collection. For strongly typed languages it may be required to
+									override this with the correct code to add an entry to an object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>fieldname: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>template: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterdecode" class="tsd-anchor"></a>
+					<h3>after<wbr>Decode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Decode<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L596">io/mxObjectCodec.d.ts:596</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook for subclassers to post-process the object after
+										decoding. This implementation returns the given object
+										without any changes. The return value of this method
+									is returned to the decoder from <a href="mxobjectcodec.html#decode">decode</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object that represents the default decoding.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterencode" class="tsd-anchor"></a>
+					<h3>after<wbr>Encode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Encode<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L430">io/mxObjectCodec.d.ts:430</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook for subclassers to post-process the node
+										for the given object after encoding and return the
+										post-processed node. This implementation returns
+										the input node. The return value of this method
+									is returned to the encoder from <a href="mxobjectcodec.html#encode">encode</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object to be encoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node that represents the default encoding.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforedecode" class="tsd-anchor"></a>
+					<h3>before<wbr>Decode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Decode<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L584">io/mxObjectCodec.d.ts:584</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook for subclassers to pre-process the node for
+										the specified object and return the node to be
+										used for further processing by <a href="mxobjectcodec.html#decode">decode</a>.
+										The object is created based on the template in the
+										calling method and is never null. This implementation
+										returns the input node. The return value of this
+										function is used in <a href="mxobjectcodec.html#decode">decode</a> to perform
+									the default decoding into the given object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforeencode" class="tsd-anchor"></a>
+					<h3>before<wbr>Encode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Encode<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L417">io/mxObjectCodec.d.ts:417</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook for subclassers to pre-process the object before
+										encoding. This returns the input object. The return
+										value of this function is used in <a href="mxobjectcodec.html#encode">encode</a> to perform
+									the default encoding into the given node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object to be encoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to encode the object into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clonetemplate" class="tsd-anchor"></a>
+					<h3>clone<wbr>Template</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>Template<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L244">io/mxObjectCodec.d.ts:244</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a new instance of the template for this codec.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="convertattributefromxml" class="tsd-anchor"></a>
+					<h3>convert<wbr>Attribute<wbr>From<wbr>Xml</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>Attribute<wbr>From<wbr>Xml<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L396">io/mxObjectCodec.d.ts:396</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts booleans and numeric values to the respective types. Values are
+									numeric if <a href="mxobjectcodec.html#isnumericattribute">isNumericAttribute</a> returns true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML attribute to be converted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to convert the attribute for.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="convertattributetoxml" class="tsd-anchor"></a>
+					<h3>convert<wbr>Attribute<wbr>ToXml</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>Attribute<wbr>ToXml<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L376">io/mxObjectCodec.d.ts:376</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts true to &quot;1&quot; and false to &quot;0&quot; is <a href="mxobjectcodec.html#isbooleanattribute">isBooleanAttribute</a> returns true.
+									All other values are not converted.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to convert the attribute for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name of the attribute to be converted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to be converted.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decode" class="tsd-anchor"></a>
+					<h3>decode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, into<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L482">io/mxObjectCodec.d.ts:482</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Parses the given node into the object or returns a new object
+									representing the given node.</p>
+								</div>
+								<p>Dec is a reference to the calling decoder. It is used to decode
+								complex objects and resolve references.</p>
+								<p>If a node has an id attribute then the object cache is checked for the
+									object. If the object is not yet in the cache then it is constructed
+								using the constructor of <a href="mxobjectcodec.html#template">template</a> and cached in <a href="mxcodec.html#objects">mxCodec.objects</a>.</p>
+								<p>This implementation decodes all attributes and childs of a node
+								according to the following rules:</p>
+								<ul>
+									<li>If the variable name is in <a href="mxobjectcodec.html#exclude">exclude</a> or if the attribute name is &quot;id&quot;
+									or &quot;as&quot; then it is ignored.</li>
+									<li>If the variable name is in <a href="mxobjectcodec.html#idrefs">idrefs</a> then <a href="mxcodec.html#getobject">mxCodec.getObject</a> is used
+									to replace the reference with an object.</li>
+									<li>The variable name is mapped using a reverse <a href="mxobjectcodec.html#mapping">mapping</a>.</li>
+									<li>If the value has a child node, then the codec is used to create a
+									child object with the variable name taken from the &quot;as&quot; attribute.</li>
+									<li>If the object is an array and the variable name is empty then the
+									value or child object is appended to the array.</li>
+									<li>If an add child has no value or the object is not an array then
+									the child text content is evaluated using <a href="mxutils.html#eval">mxUtils.eval</a>.</li>
+								</ul>
+								<p>For add nodes where the object is not an array and the variable name
+									is defined, the default mechanism is used, allowing to override/add
+								methods as follows:</p>
+								<pre><code class="language-javascript"><span style="color: #800000">&lt;</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;add</span><span style="color: #000000"> </span><span style="color: #FF0000">as</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;hello&quot;</span><span style="color: #800000">&gt;</span><span style="color: #000000">&lt;![CDATA[</span>
+<span style="color: #000000">    function(arg1) </span><span style="color: #0000FF">{</span>
+<span style="color: #000000FF">      </span><span style="color: #001080">mxUtils</span><span style="color: #000000FF">.</span><span style="color: #795E26">alert</span><span style="color: #000000FF">(</span><span style="color: #A31515">&#039;Hello &#039;</span><span style="color: #000000">+</span><span style="color: #001080">arg1</span><span style="color: #000000FF">);</span>
+<span style="color: #000000FF">    </span><span style="color: #0000FF">}</span>
+<span style="color: #000000">  ]]&gt;</span><span style="color: #800000">&lt;/add&gt;</span>
+<span style="color: #800000">&lt;/</span><span style="color: #267F99">Object</span><span style="color: #800000">&gt;</span>
+</code></pre>
+								<p>If no object exists for an ID in <a href="mxobjectcodec.html#idrefs">idrefs</a> a warning is issued
+								using <a href="mxlog.html#warn-1">mxLog.warn</a>.</p>
+								<p>Returns the resulting object that represents the given XML node
+								or the object given to the method as the into parameter.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> into: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional objec to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodeattribute" class="tsd-anchor"></a>
+					<h3>decode<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Attribute<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L519">io/mxObjectCodec.d.ts:519</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reads the given attribute into the specified object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML attribute to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the attribute into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodeattributes" class="tsd-anchor"></a>
+					<h3>decode<wbr>Attributes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Attributes<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L500">io/mxObjectCodec.d.ts:500</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decodes all attributes of the given node using <a href="mxobjectcodec.html#decodeattribute">decodeAttribute</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodechild" class="tsd-anchor"></a>
+					<h3>decode<wbr>Child</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Child<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, child<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L537">io/mxObjectCodec.d.ts:537</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reads the specified child into the given object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>child: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML child element to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodechildren" class="tsd-anchor"></a>
+					<h3>decode<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Children<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L528">io/mxObjectCodec.d.ts:528</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decodes all children of the given node using <a href="mxobjectcodec.html#decodechild">decodeChild</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodenode" class="tsd-anchor"></a>
+					<h3>decode<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Node<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L491">io/mxObjectCodec.d.ts:491</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calls <a href="mxobjectcodec.html#decodeattributes">decodeAttributes</a> and <a href="mxobjectcodec.html#decodechildren">decodeChildren</a> for the given node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the node into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="encode" class="tsd-anchor"></a>
+					<h3>encode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L326">io/mxObjectCodec.d.ts:326</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encodes the specified object and returns a node
+										representing then given object. Calls <a href="mxobjectcodec.html#beforeencode">beforeEncode</a>
+										after creating the node and <a href="mxobjectcodec.html#afterencode">afterEncode</a> with the
+									resulting node after processing.</p>
+								</div>
+								<p>Enc is a reference to the calling encoder. It is used
+								to encode complex objects and create references.</p>
+								<p>This implementation encodes all variables of an
+								object according to the following rules:</p>
+								<ul>
+									<li>If the variable name is in <a href="mxobjectcodec.html#exclude">exclude</a> then it is ignored.</li>
+									<li>If the variable name is in <a href="mxobjectcodec.html#idrefs">idrefs</a> then <a href="mxcodec.html#getid">mxCodec.getId</a>
+									is used to replace the object with its ID.</li>
+									<li>The variable name is mapped using <a href="mxobjectcodec.html#mapping">mapping</a>.</li>
+									<li>If obj is an array and the variable name is numeric
+									(ie. an index) then it is not encoded.</li>
+									<li>If the value is an object, then the codec is used to
+										create a child node with the variable name encoded into
+									the &quot;as&quot; attribute.</li>
+									<li>Else, if <a href="mxcodec.html#encodedefaults">encodeDefaults</a> is true or the value differs
+									from the template value, then ...</li>
+									<li>... if obj is not an array, then the value is mapped to
+									an attribute.</li>
+									<li>... else if obj is an array, the value is mapped to an
+										add child with a value attribute or a text child node,
+									if the value is a function.</li>
+								</ul>
+								<p>If no ID exists for a variable in <a href="mxobjectcodec.html#idrefs">idrefs</a> or if an object
+								cannot be encoded, a warning is issued using <a href="mxlog.html#warn-1">mxLog.warn</a>.</p>
+								<p>Returns the resulting XML node that represents the given
+								object.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object to be encoded.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="encodeobject" class="tsd-anchor"></a>
+					<h3>encode<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Object<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L336">io/mxObjectCodec.d.ts:336</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encodes the value of each member in then given obj into the given node using
+									<a href="mxobjectcodec.html#encodevalue">encodeValue</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object to be encoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node that contains the encoded object.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="encodevalue" class="tsd-anchor"></a>
+					<h3>encode<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Value<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L349">io/mxObjectCodec.d.ts:349</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts the given value according to the mappings
+										and id-refs in this codec and uses <a href="mxobjectcodec.html#writeattribute">writeAttribute</a>
+									to write the attribute into the given node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object whose property is going to be encoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node that contains the encoded object.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value of the property to be encoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node that contains the encoded object.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattributename" class="tsd-anchor"></a>
+					<h3>get<wbr>Attribute<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attribute<wbr>Name<span class="tsd-signature-symbol">(</span>fieldname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L260">io/mxObjectCodec.d.ts:260</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the attributename for the given fieldname.
+										Looks up the value in the <a href="mxobjectcodec.html#mapping">mapping</a> or returns
+										the input if there is no mapping for the
+									given name.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fieldname: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getfieldname" class="tsd-anchor"></a>
+					<h3>get<wbr>Field<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Field<wbr>Name<span class="tsd-signature-symbol">(</span>attributename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L252">io/mxObjectCodec.d.ts:252</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the fieldname for the given attributename.
+										Looks up the value in the <a href="mxobjectcodec.html#reverse">reverse</a> mapping or returns
+										the input if there is no reverse mapping for the
+									given name.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attributename: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getfieldtemplate" class="tsd-anchor"></a>
+					<h3>get<wbr>Field<wbr>Template</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Field<wbr>Template<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fieldname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, child<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L547">io/mxObjectCodec.d.ts:547</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the template instance for the given field. This returns the
+										value of the field, null if the value is an array or an empty collection
+										if the value is a collection. The value is then used to populate the
+										field for a new instance. For strongly typed languages it may be
+										required to override this to return the correct collection instance
+									based on the encoded child.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>fieldname: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>child: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getname" class="tsd-anchor"></a>
+					<h3>get<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L239">io/mxObjectCodec.d.ts:239</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the name used for the nodenames and lookup of the codec when
+										classes are encoded and nodes are decoded. For classes to work with
+										this the codec registry automatically adds an alias for the classname
+										if that is different than what this returns. The default implementation
+									returns the classname of the template class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isbooleanattribute" class="tsd-anchor"></a>
+					<h3>is<wbr>Boolean<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Boolean<wbr>Attribute<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L386">io/mxObjectCodec.d.ts:386</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given object attribute is a boolean value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to convert the attribute for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name of the attribute to be converted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value of the attribute to be converted.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isexcluded" class="tsd-anchor"></a>
+					<h3>is<wbr>Excluded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Excluded<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, write<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L273">io/mxObjectCodec.d.ts:273</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given attribute is to be ignored by the codec. This
+										implementation returns true if the given fieldname is in <a href="mxobjectcodec.html#exclude">exclude</a> or
+									if the fieldname equals <a href="mxobjectidentity.html#field_name">mxObjectIdentity.FIELD_NAME</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object instance that contains the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Fieldname of the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value of the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> write: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean indicating if the field is being encoded or decoded.
+										Write is true if the field is being encoded, else it is being decoded.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isignoredattribute" class="tsd-anchor"></a>
+					<h3>is<wbr>Ignored<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Ignored<wbr>Attribute<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L510">io/mxObjectCodec.d.ts:510</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given attribute should be ignored. This implementation
+									returns true if the attribute name is &quot;as&quot; or &quot;id&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML attribute to be decoded.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to encode the attribute into.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isnumericattribute" class="tsd-anchor"></a>
+					<h3>is<wbr>Numeric<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Numeric<wbr>Attribute<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L405">io/mxObjectCodec.d.ts:405</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given XML attribute is or should be a numeric value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML attribute to be converted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objec to convert the attribute for.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isreference" class="tsd-anchor"></a>
+					<h3>is<wbr>Reference</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Reference<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, write<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L286">io/mxObjectCodec.d.ts:286</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given fieldname is to be treated
+										as a textual reference (ID). This implementation returns
+									true if the given fieldname is in <a href="mxobjectcodec.html#idrefs">idrefs</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object instance that contains the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attr: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Fieldname of the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value of the field.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> write: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean indicating if the field is being encoded or decoded.
+										Write is true if the field is being encoded, else it is being decoded.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="processinclude" class="tsd-anchor"></a>
+					<h3>process<wbr>Include</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">process<wbr>Include<span class="tsd-signature-symbol">(</span>dec<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, into<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L568">io/mxObjectCodec.d.ts:568</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the given node is an include directive and
+										executes the include by decoding the XML document. Returns
+									false if the given node is not an include directive.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dec: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcodec.html">mxCodec</a> that controls the encoding/decoding process.</p>
+									</div>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>XML node to be checked.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> into: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional object to pass-thru to the codec.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writeattribute" class="tsd-anchor"></a>
+					<h3>write<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Attribute<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L355">io/mxObjectCodec.d.ts:355</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes the given value into node using <a href="mxobjectcodec.html#writeprimitiveattribute">writePrimitiveAttribute</a>
+									or <a href="mxobjectcodec.html#writecomplexattribute">writeComplexAttribute</a> depending on the type of the value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writecomplexattribute" class="tsd-anchor"></a>
+					<h3>write<wbr>Complex<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Complex<wbr>Attribute<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L365">io/mxObjectCodec.d.ts:365</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes the given value as a child node of the given node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writeprimitiveattribute" class="tsd-anchor"></a>
+					<h3>write<wbr>Primitive<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Primitive<wbr>Attribute<span class="tsd-signature-symbol">(</span>enc<span class="tsd-signature-symbol">: </span><a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/io/mxObjectCodec.d.ts#L360">io/mxObjectCodec.d.ts:360</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes the given value as an attribute of the given node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enc: <a href="mxcodec.html" class="tsd-signature-type" data-tsd-kind="Class">mxCodec</a></h5>
+								</li>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mxobjectcodec.html" class="tsd-kind-icon">mx<wbr>Object<wbr>Codec</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#exclude" class="tsd-kind-icon">exclude</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#idrefs" class="tsd-kind-icon">idrefs</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#mapping" class="tsd-kind-icon">mapping</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#reverse" class="tsd-kind-icon">reverse</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#template" class="tsd-kind-icon">template</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="mxobjectcodec.html#alloweval" class="tsd-kind-icon">allow<wbr>Eval</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#addobjectvalue" class="tsd-kind-icon">add<wbr>Object<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#afterdecode" class="tsd-kind-icon">after<wbr>Decode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#afterencode" class="tsd-kind-icon">after<wbr>Encode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#beforedecode" class="tsd-kind-icon">before<wbr>Decode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#beforeencode" class="tsd-kind-icon">before<wbr>Encode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#clonetemplate" class="tsd-kind-icon">clone<wbr>Template</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#convertattributefromxml" class="tsd-kind-icon">convert<wbr>Attribute<wbr>From<wbr>Xml</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#convertattributetoxml" class="tsd-kind-icon">convert<wbr>Attribute<wbr>ToXml</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decode" class="tsd-kind-icon">decode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decodeattribute" class="tsd-kind-icon">decode<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decodeattributes" class="tsd-kind-icon">decode<wbr>Attributes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decodechild" class="tsd-kind-icon">decode<wbr>Child</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decodechildren" class="tsd-kind-icon">decode<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#decodenode" class="tsd-kind-icon">decode<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#encode" class="tsd-kind-icon">encode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#encodeobject" class="tsd-kind-icon">encode<wbr>Object</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#encodevalue" class="tsd-kind-icon">encode<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#getattributename" class="tsd-kind-icon">get<wbr>Attribute<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#getfieldname" class="tsd-kind-icon">get<wbr>Field<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#getfieldtemplate" class="tsd-kind-icon">get<wbr>Field<wbr>Template</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#getname" class="tsd-kind-icon">get<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#isbooleanattribute" class="tsd-kind-icon">is<wbr>Boolean<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#isexcluded" class="tsd-kind-icon">is<wbr>Excluded</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#isignoredattribute" class="tsd-kind-icon">is<wbr>Ignored<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#isnumericattribute" class="tsd-kind-icon">is<wbr>Numeric<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#isreference" class="tsd-kind-icon">is<wbr>Reference</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#processinclude" class="tsd-kind-icon">process<wbr>Include</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#writeattribute" class="tsd-kind-icon">write<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#writecomplexattribute" class="tsd-kind-icon">write<wbr>Complex<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxobjectcodec.html#writeprimitiveattribute" class="tsd-kind-icon">write<wbr>Primitive<wbr>Attribute</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,959 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxDefaultToolbar | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxdefaulttoolbar.html">mxDefaultToolbar</a>
+				</li>
+			</ul>
+			<h1>Class mxDefaultToolbar</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Toolbar for the editor. This modifies the state of the graph
+						or inserts new cells upon mouse clicks.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example:</dt>
+						<dd><p>Create a toolbar with a button to copy the selection into the clipboard,
+								and a combo box with one action to paste the selection from the clipboard
+							into the graph.</p>
+							<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">toolbar</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxDefaultToolbar</span><span style="color: #000000">(</span><span style="color: #001080">container</span><span style="color: #000000">, </span><span style="color: #001080">editor</span><span style="color: #000000">);</span>
+<span style="color: #001080">toolbar</span><span style="color: #000000">.</span><span style="color: #795E26">addItem</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Copy&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">null</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;copy&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">combo</span><span style="color: #000000"> = </span><span style="color: #001080">toolbar</span><span style="color: #000000">.</span><span style="color: #795E26">addActionCombo</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;More actions...&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">toolbar</span><span style="color: #000000">.</span><span style="color: #795E26">addActionOption</span><span style="color: #000000">(</span><span style="color: #001080">combo</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Paste&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;paste&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+						</dd>
+						<dt>codec:</dt>
+						<dd><p>This class uses the {@link mxDefaultToolbarCodec} to read configuration
+								data into an existing instance. See {@link mxDefaultToolbarCodec} for a
+							description of the configuration format.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxDefaultToolbar</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-kind-class">
+				<h3 class="tsd-before-signature">Indexable</h3>
+				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Toolbar for the editor. This modifies the state of the graph
+						or inserts new cells upon mouse clicks.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#connectondrop" class="tsd-kind-icon">connect<wbr>OnDrop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#editor" class="tsd-kind-icon">editor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#resethandler" class="tsd-kind-icon">reset<wbr>Handler</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#spacing" class="tsd-kind-icon">spacing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#toolbar" class="tsd-kind-icon">toolbar</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addactionoption" class="tsd-kind-icon">add<wbr>Action<wbr>Option</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addcombo" class="tsd-kind-icon">add<wbr>Combo</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#additem" class="tsd-kind-icon">add<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addmode" class="tsd-kind-icon">add<wbr>Mode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addoption" class="tsd-kind-icon">add<wbr>Option</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addprototype" class="tsd-kind-icon">add<wbr>Prototype</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#addseparator" class="tsd-kind-icon">add<wbr>Separator</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#drop" class="tsd-kind-icon">drop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxdefaulttoolbar.html#installdrophandler" class="tsd-kind-icon">install<wbr>Drop<wbr>Handler</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Default<wbr>Toolbar<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, editor<span class="tsd-signature-symbol">: </span><a href="mxeditor.html" class="tsd-signature-type" data-tsd-kind="Class">mxEditor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxdefaulttoolbar.html" class="tsd-signature-type" data-tsd-kind="Class">mxDefaultToolbar</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L26">editor/mxDefaultToolbar.d.ts:26</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs a new toolbar for the given container and editor. The
+										container and editor may be null if a prototypical instance for a
+									{@link mxDefaultKeyHandlerCodec} is created.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>container: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>DOM node that contains the toolbar.</p>
+									</div>
+								</li>
+								<li>
+									<h5>editor: <a href="mxeditor.html" class="tsd-signature-type" data-tsd-kind="Class">mxEditor</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Reference to the enclosing <a href="mxeditor.html">mxEditor</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxdefaulttoolbar.html" class="tsd-signature-type" data-tsd-kind="Class">mxDefaultToolbar</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="connectondrop" class="tsd-anchor"></a>
+					<h3>connect<wbr>OnDrop</h3>
+					<div class="tsd-signature tsd-kind-icon">connect<wbr>OnDrop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L64">editor/mxDefaultToolbar.d.ts:64</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if elements should be connected if new cells are dropped onto connectable elements.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>is false.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="editor" class="tsd-anchor"></a>
+					<h3>editor</h3>
+					<div class="tsd-signature tsd-kind-icon">editor<span class="tsd-signature-symbol">:</span> <a href="mxeditor.html" class="tsd-signature-type" data-tsd-kind="Class">mxEditor</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L40">editor/mxDefaultToolbar.d.ts:40</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the enclosing <a href="mxeditor.html">mxEditor</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="resethandler" class="tsd-anchor"></a>
+					<h3>reset<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">reset<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L50">editor/mxDefaultToolbar.d.ts:50</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the function used to reset the <a href="mxdefaulttoolbar.html#toolbar">toolbar</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="spacing" class="tsd-anchor"></a>
+					<h3>spacing</h3>
+					<div class="tsd-signature tsd-kind-icon">spacing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L57">editor/mxDefaultToolbar.d.ts:57</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines the spacing between existing and new vertices in gridSize units when a new vertex is dropped on an existing cell.  Default is 4 (40 pixels).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>is 4</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="toolbar" class="tsd-anchor"></a>
+					<h3>toolbar</h3>
+					<div class="tsd-signature tsd-kind-icon">toolbar<span class="tsd-signature-symbol">:</span> <a href="mxtoolbar.html" class="tsd-signature-type" data-tsd-kind="Class">mxToolbar</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L45">editor/mxDefaultToolbar.d.ts:45</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the internal <a href="mxtoolbar.html">mxToolbar</a>.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addactionoption" class="tsd-anchor"></a>
+					<h3>add<wbr>Action<wbr>Option</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Action<wbr>Option<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Action<wbr>Option<span class="tsd-signature-symbol">(</span>combo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L99">editor/mxDefaultToolbar.d.ts:99</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper method to invoke <a href="mxtoolbar.html#addactioncombo">mxToolbar.addActionCombo</a> on <a href="mxdefaulttoolbar.html#toolbar">toolbar</a> using the given title and return the resulting DOM node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the combo.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L108">editor/mxDefaultToolbar.d.ts:108</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Binds the given action to a option with the specified label in the given combo.  Combo is an object returned from an earlier call to <a href="mxdefaulttoolbar.html#addcombo">addCombo</a> or <a href="mxtoolbar.html#addactioncombo">addActionCombo</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>combo: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>DOM node that represents the combo box.</p>
+									</div>
+								</li>
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the combo.</p>
+									</div>
+								</li>
+								<li>
+									<h5>action: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name of the action to execute in <a href="mxdefaulttoolbar.html#editor">editor</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addcombo" class="tsd-anchor"></a>
+					<h3>add<wbr>Combo</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Combo<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L92">editor/mxDefaultToolbar.d.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper method to invoke <a href="mxtoolbar.html#addcombo">mxToolbar.addCombo</a> on toolbar and return the resulting DOM node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="additem" class="tsd-anchor"></a>
+					<h3>add<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Item<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pressed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L80">editor/mxDefaultToolbar.d.ts:80</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a new item that executes the given action in <a href="mxdefaulttoolbar.html#editor">editor</a>. The title,
+									icon and pressedIcon are used to display the toolbar item.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title (tooltip) for the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>icon: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>URL of the icon to be used for displaying the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>action: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name of the action to execute when the item is clicked.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pressed: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional URL of the icon for the pressed state.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addmode" class="tsd-anchor"></a>
+					<h3>add<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Mode<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pressed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, funct<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L129">editor/mxDefaultToolbar.d.ts:129</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an item for selecting the given mode in the <a href="mxdefaulttoolbar.html#editor">editor</a>&#39;s graph.
+									Supported modenames are select, connect and pan.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>icon: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>URL of the icon that represents the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>mode: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the mode name to be used in <a href="mxeditor.html#setmode">mxEditor.setMode</a>.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pressed: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional URL of the icon that represents the pressed state.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> funct: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional JavaScript function that takes the <a href="mxeditor.html">mxEditor</a> as the first and only argument that is executed after the mode has been selected.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addoption" class="tsd-anchor"></a>
+					<h3>add<wbr>Option</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Option<span class="tsd-signature-symbol">(</span>combo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L117">editor/mxDefaultToolbar.d.ts:117</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Helper method to invoke <a href="mxtoolbar.html#addoption">mxToolbar.addOption</a> on <a href="mxdefaulttoolbar.html#toolbar">toolbar</a> and return the resulting DOM node that represents the option.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>combo: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>DOM node that represents the combo box.</p>
+									</div>
+								</li>
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the combo.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object that represents the value of the option.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addprototype" class="tsd-anchor"></a>
+					<h3>add<wbr>Prototype</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Prototype<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ptype<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, pressed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, insert<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span>, toggle<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L147">editor/mxDefaultToolbar.d.ts:147</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an item for inserting a clone of the specified prototype cell into
+										the <a href="mxdefaulttoolbar.html#editor">editor</a>&#39;s graph. The ptype may either be a cell or a function that
+									returns a cell.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>String that represents the title of the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>icon: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>URL of the icon that represents the item.</p>
+									</div>
+								</li>
+								<li>
+									<h5>ptype: <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function or object that represents the prototype cell. If ptype
+											is a function then it is invoked with no arguments to create new
+										instances.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pressed: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional URL of the icon that represents the pressed state.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> insert: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional JavaScript function that handles an insert of the new
+											cell. This function takes the <a href="mxeditor.html">mxEditor</a>, new cell to be inserted, mouse
+										event and optional <a href="mxcell.html">mxCell</a> under the mouse pointer as arguments.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> toggle: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional boolean that specifies if the item can be toggled. Default is true.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addseparator" class="tsd-anchor"></a>
+					<h3>add<wbr>Separator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Separator<span class="tsd-signature-symbol">(</span>icon<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L87">editor/mxDefaultToolbar.d.ts:87</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a vertical separator using the optional icon.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional URL of the icon that represents the vertical separator. Default is {@link mxClient.imageBasePath} + ‘/separator.gif’.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MouseEvent</span>, source<span class="tsd-signature-symbol">?: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L186">editor/mxDefaultToolbar.d.ts:186</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Handles a drop by connecting the given vertex to the given source cell.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vertex: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcell.html">mxCell</a> to be inserted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>evt: <span class="tsd-signature-type">MouseEvent</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Mouse event that represents the drop.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> source: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional <a href="mxcell.html">mxCell</a> that represents the source terminal.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L200">editor/mxDefaultToolbar.d.ts:200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroys the <a href="mxdefaulttoolbar.html#toolbar">toolbar</a> associated with this object and removes all installed listeners.
+									This does normally not need to be called, the <a href="mxdefaulttoolbar.html#toolbar">toolbar</a> is destroyed automatically when the window unloads (in IE) by <a href="mxeditor.html">mxEditor</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drop" class="tsd-anchor"></a>
+					<h3>drop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">drop<span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MouseEvent</span>, target<span class="tsd-signature-symbol">?: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L167">editor/mxDefaultToolbar.d.ts:167</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Handles a drop from a toolbar item to the graph. The given vertex
+										represents the new cell to be inserted. This invokes <a href="mxdefaulttoolbar.html#insert">insert</a> or
+									<a href="mxdefaulttoolbar.html#connect">connect</a> depending on the given target cell.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vertex: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcell.html">mxCell</a> to be inserted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>evt: <span class="tsd-signature-type">MouseEvent</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Mouse event that represents the drop.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> target: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional <a href="mxcell.html">mxCell</a> that represents the drop target.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="init" class="tsd-anchor"></a>
+					<h3>init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L69">editor/mxDefaultToolbar.d.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs the <a href="mxdefaulttoolbar.html#toolbar">toolbar</a> for the given container and installs a listener that updates the <a href="mxeditor.html#insertfunction">mxEditor.insertFunction</a> on <a href="mxdefaulttoolbar.html#editor">editor</a> if an item is selected in the toolbar.  This assumes that <a href="mxdefaulttoolbar.html#editor">editor</a> is not null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>container: <span class="tsd-signature-type">HTMLElement</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="insert" class="tsd-anchor"></a>
+					<h3>insert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MouseEvent</span>, target<span class="tsd-signature-symbol">?: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L177">editor/mxDefaultToolbar.d.ts:177</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Handles a drop by inserting the given vertex into the given parent cell
+									or the default parent if no parent is specified.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vertex: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxcell.html">mxCell</a> to be inserted.</p>
+									</div>
+								</li>
+								<li>
+									<h5>evt: <span class="tsd-signature-type">MouseEvent</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Mouse event that represents the drop.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> target: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional <a href="mxcell.html">mxCell</a> that represents the parent.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="installdrophandler" class="tsd-anchor"></a>
+					<h3>install<wbr>Drop<wbr>Handler</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">install<wbr>Drop<wbr>Handler<span class="tsd-signature-symbol">(</span>img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, dropHandler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/editor/mxDefaultToolbar.d.ts#L194">editor/mxDefaultToolbar.d.ts:194</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Makes the given img draggable using the given function for handling a drop event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>img: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>DOM node that represents the image.</p>
+									</div>
+								</li>
+								<li>
+									<h5>dropHandler: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function that handles a drop of the image.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mxdefaulttoolbar.html" class="tsd-kind-icon">mx<wbr>Default<wbr>Toolbar</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#connectondrop" class="tsd-kind-icon">connect<wbr>OnDrop</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#editor" class="tsd-kind-icon">editor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#resethandler" class="tsd-kind-icon">reset<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#spacing" class="tsd-kind-icon">spacing</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#toolbar" class="tsd-kind-icon">toolbar</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addactionoption" class="tsd-kind-icon">add<wbr>Action<wbr>Option</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addcombo" class="tsd-kind-icon">add<wbr>Combo</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#additem" class="tsd-kind-icon">add<wbr>Item</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addmode" class="tsd-kind-icon">add<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addoption" class="tsd-kind-icon">add<wbr>Option</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addprototype" class="tsd-kind-icon">add<wbr>Prototype</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#addseparator" class="tsd-kind-icon">add<wbr>Separator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#drop" class="tsd-kind-icon">drop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#init" class="tsd-kind-icon">init</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#insert" class="tsd-kind-icon">insert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxdefaulttoolbar.html#installdrophandler" class="tsd-kind-icon">install<wbr>Drop<wbr>Handler</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

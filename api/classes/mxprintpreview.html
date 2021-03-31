@@ -1,0 +1,1482 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxPrintPreview | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxprintpreview.html">mxPrintPreview</a>
+				</li>
+			</ul>
+			<h1>Class mxPrintPreview</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">preview</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxPrintPreview</span><span style="color: #000000">(</span><span style="color: #001080">graph</span><span style="color: #000000">);</span>
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">open</span><span style="color: #000000">();</span>
+</code></pre>
+							<p>Use <a href="mxutils.html#getscaleforpagecount">mxUtils.getScaleForPageCount</a> as follows in order to print the graph
+							across a given number of pages:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">pageCount</span><span style="color: #000000"> = </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">prompt</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Enter page count&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">pageCount</span><span style="color: #000000"> != </span><span style="color: #0000FF">null</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">scale</span><span style="color: #000000"> = </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">getScaleForPageCount</span><span style="color: #000000">(</span><span style="color: #001080">pageCount</span><span style="color: #000000">, </span><span style="color: #001080">graph</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">preview</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxPrintPreview</span><span style="color: #000000">(</span><span style="color: #001080">graph</span><span style="color: #000000">, </span><span style="color: #001080">scale</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">open</span><span style="color: #000000">();</span>
+<span style="color: #000000">}</span>
+</code></pre>
+							<a href="#additional-pages" id="additional-pages" style="color: inherit; text-decoration: none;">
+								<h3>Additional pages</h3>
+							</a>
+							<p>To add additional pages before and after the output, <a href="mxprintpreview.html#getcoverpages">getCoverPages</a> and
+							<a href="mxprintpreview.html#getappendices">getAppendices</a> can be used, respectively.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">preview</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxPrintPreview</span><span style="color: #000000">(</span><span style="color: #001080">graph</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">);</span>
+
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">getCoverPages</span><span style="color: #000000">(</span><span style="color: #001080">w</span><span style="color: #000000">, </span><span style="color: #001080">h</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> [</span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #795E26">renderPage</span><span style="color: #000000">(</span><span style="color: #001080">w</span><span style="color: #000000">, </span><span style="color: #001080">h</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">div</span><span style="color: #000000">)</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">div</span><span style="color: #000000">.</span><span style="color: #001080">innerHTML</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;&lt;div style=&quot;position:relative;margin:4px;&quot;&gt;Cover Page&lt;/p&gt;&#039;</span>
+<span style="color: #000000">  }))];</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">getAppendices</span><span style="color: #000000">(</span><span style="color: #001080">w</span><span style="color: #000000">, </span><span style="color: #001080">h</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> [</span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #795E26">renderPage</span><span style="color: #000000">(</span><span style="color: #001080">w</span><span style="color: #000000">, </span><span style="color: #001080">h</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">div</span><span style="color: #000000">)</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">div</span><span style="color: #000000">.</span><span style="color: #001080">innerHTML</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;&lt;div style=&quot;position:relative;margin:4px;&quot;&gt;Appendix&lt;/p&gt;&#039;</span>
+<span style="color: #000000">  }))];</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">open</span><span style="color: #000000">();</span>
+</code></pre>
+							<a href="#css" id="css" style="color: inherit; text-decoration: none;">
+								<h3>CSS</h3>
+							</a>
+							<p>The CSS from the original page is not carried over to the print preview.
+								To add CSS to the page, use the css argument in the <a href="mxprintpreview.html#open">open</a> function or
+							override <a href="mxprintpreview.html#writehead">writeHead</a> to add the respective link tags as follows:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">writeHead</span><span style="color: #000000"> = </span><span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #001080">writeHead</span><span style="color: #000000">;</span>
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">writeHead</span><span style="color: #000000">(</span><span style="color: #001080">doc</span><span style="color: #000000">, </span><span style="color: #001080">css</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">writeHead</span><span style="color: #000000">.</span><span style="color: #795E26">apply</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">arguments</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">};</span>
+</code></pre>
+							<a href="#padding" id="padding" style="color: inherit; text-decoration: none;">
+								<h3>Padding</h3>
+							</a>
+							<p>To add a padding to the page in the preview (but not the print output), use
+							the following code:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">writeHead</span><span style="color: #000000">(</span><span style="color: #001080">doc</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">writeHead</span><span style="color: #000000">.</span><span style="color: #795E26">apply</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">arguments</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;style type=&quot;text/css&quot;&gt;&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@media screen {&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;  body &gt; div { padding-top:30px;padding-left:40px;box-sizing:content-box; }&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;}&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">writeln</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;/style&gt;&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">};</span>
+</code></pre>
+							<a href="#headers" id="headers" style="color: inherit; text-decoration: none;">
+								<h3>Headers</h3>
+							</a>
+							<p>Apart from setting the title argument in the mxPrintPreview constructor you
+							can override <a href="mxprintpreview.html#renderpage">renderPage</a> as follows to add a header to any page:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">oldRenderPage</span><span style="color: #000000"> = </span><span style="color: #001080">renderPage</span><span style="color: #000000">;</span>
+<span style="color: #795E26">renderPage</span><span style="color: #000000">(</span><span style="color: #001080">w</span><span style="color: #000000">, </span><span style="color: #001080">h</span><span style="color: #000000">, </span><span style="color: #001080">x</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000">, </span><span style="color: #001080">content</span><span style="color: #000000">, </span><span style="color: #001080">pageNumber</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">div</span><span style="color: #000000"> = </span><span style="color: #001080">oldRenderPage</span><span style="color: #000000">.</span><span style="color: #795E26">apply</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">arguments</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">header</span><span style="color: #000000"> = </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #795E26">createElement</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;div&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">header</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">position</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;absolute&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">header</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">top</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;0px&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">header</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">width</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;100%&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">header</span><span style="color: #000000">.</span><span style="color: #001080">style</span><span style="color: #000000">.</span><span style="color: #001080">textAlign</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;right&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">write</span><span style="color: #000000">(</span><span style="color: #001080">header</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Your header here&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">div</span><span style="color: #000000">.</span><span style="color: #001080">firstChild</span><span style="color: #000000">.</span><span style="color: #795E26">appendChild</span><span style="color: #000000">(</span><span style="color: #001080">header</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">div</span><span style="color: #000000">;</span>
+<span style="color: #000000">};</span>
+</code></pre>
+							<p>The pageNumber argument contains the number of the current page, starting at</p>
+							<ol>
+								<li>To display a header on the first page only, check pageNumber and add a
+								vertical offset in the constructor call for the height of the header.</li>
+							</ol>
+							<a href="#page-format" id="page-format" style="color: inherit; text-decoration: none;">
+								<h3>Page Format</h3>
+							</a>
+							<p>For landscape printing, use <a href="mxconstants.html#page_format_a4_landscape">mxConstants.PAGE_FORMAT_A4_LANDSCAPE</a> as
+								the pageFormat in <a href="mxutils.html#getscaleforpagecount">mxUtils.getScaleForPageCount</a> and <a href="mxprintpreview.html">mxPrintPreview</a>.
+								Keep in mind that one can not set the defaults for the print dialog
+								of the operating system from JavaScript so the user must manually choose
+							a page format that matches this setting.</p>
+							<p>You can try passing the following CSS directive to <a href="mxprintpreview.html#open">open</a> to set the
+								page format in the print dialog to landscape. However, this CSS
+							directive seems to be ignored in most major browsers, including IE.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #000000">@</span><span style="color: #001080">page</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  size: </span><span style="color: #001080">landscape</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+							<p>Note that the print preview behaves differently in IE when used from the
+							filesystem or via HTTP so printing should always be tested via HTTP.</p>
+							<p>If you are using a DOCTYPE in the source page you can override <a href="mxprintpreview.html#getdoctype">getDoctype</a>
+								and provide the same DOCTYPE for the print preview if required. Here is
+							an example for IE8 standards mode.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">preview</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">mxPrintPreview</span><span style="color: #000000">(</span><span style="color: #001080">graph</span><span style="color: #000000">);</span>
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">getDoctype</span><span style="color: #000000">()</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&lt;!--[if IE]&gt;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=5,IE=8&quot; &gt;&lt;![endif]--&gt;&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">};</span>
+<span style="color: #001080">preview</span><span style="color: #000000">.</span><span style="color: #795E26">open</span><span style="color: #000000">();</span>
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxPrintPreview</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mxprintpreview.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#autoorigin" class="tsd-kind-icon">auto<wbr>Origin</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#border" class="tsd-kind-icon">border</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#bordercolor" class="tsd-kind-icon">border<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#clipping" class="tsd-kind-icon">clipping</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#graph" class="tsd-kind-icon">graph</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#marginbottom" class="tsd-kind-icon">margin<wbr>Bottom</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#margintop" class="tsd-kind-icon">margin<wbr>Top</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#pagecount" class="tsd-kind-icon">page<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#pageformat" class="tsd-kind-icon">page<wbr>Format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#pageselector" class="tsd-kind-icon">page<wbr>Selector</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#printbackgroundimage" class="tsd-kind-icon">print<wbr>Background<wbr>Image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#printcontrols" class="tsd-kind-icon">print<wbr>Controls</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#printoverlays" class="tsd-kind-icon">print<wbr>Overlays</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#scale" class="tsd-kind-icon">scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#targetwindow" class="tsd-kind-icon">target<wbr>Window</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#wnd" class="tsd-kind-icon">wnd</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#x0" class="tsd-kind-icon">x0</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxprintpreview.html#y0" class="tsd-kind-icon">y0</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#addgraphfragment" class="tsd-kind-icon">add<wbr>Graph<wbr>Fragment</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#addpagebreak" class="tsd-kind-icon">add<wbr>Page<wbr>Break</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#appendgraph" class="tsd-kind-icon">append<wbr>Graph</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#closedocument" class="tsd-kind-icon">close<wbr>Document</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#createpageselector" class="tsd-kind-icon">create<wbr>Page<wbr>Selector</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getappendices" class="tsd-kind-icon">get<wbr>Appendices</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getcoverpages" class="tsd-kind-icon">get<wbr>Cover<wbr>Pages</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getdoctype" class="tsd-kind-icon">get<wbr>Doctype</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getlinkforcellstate" class="tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getroot" class="tsd-kind-icon">get<wbr>Root</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#getwindow" class="tsd-kind-icon">get<wbr>Window</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#insertbackgroundimage" class="tsd-kind-icon">insert<wbr>Background<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#open" class="tsd-kind-icon">open</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#print" class="tsd-kind-icon">print</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#renderpage" class="tsd-kind-icon">render<wbr>Page</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#writehead" class="tsd-kind-icon">write<wbr>Head</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxprintpreview.html#writepostfix" class="tsd-kind-icon">write<wbr>Postfix</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Print<wbr>Preview<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a>, scale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, pageFormat<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;&quot;</span>, border<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, x0<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, y0<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, borderColor<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, pageSelector<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxprintpreview.html" class="tsd-signature-type" data-tsd-kind="Class">mxPrintPreview</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L156">view/mxPrintPreview.d.ts:156</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>graph: <a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxgraph.html">mxGraph</a> to be previewed.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> scale: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional scale of the output. Default is 1 / <a href="mxgraph.html#pagescale">mxGraph.pageScale</a>.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageFormat: <span class="tsd-signature-type">&quot;&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="mxrectangle.html">mxRectangle</a> that specifies the page format (in pixels).</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> border: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Border in pixels along each side of every page. Note that the
+											actual print function in the browser will add another border for
+											printing.
+											This should match the page format of the printer. Default uses the
+										<a href="mxgraph.html#pageformat">mxGraph.pageFormat</a> of the given graph.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> x0: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional left offset of the output. Default is 0.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> y0: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional top offset of the output. Default is 0.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> borderColor: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional color of the page border. Default is no border.
+											Note that a border is sometimes useful to highlight the printed page
+										border in the print preview of the browser.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> title: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional string that is used for the window title. Default
+										is &#39;Printer-friendly version&#39;.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageSelector: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional boolean that specifies if the page selector
+										should appear in the window with the print preview. Default is true.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxprintpreview.html" class="tsd-signature-type" data-tsd-kind="Class">mxPrintPreview</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="autoorigin" class="tsd-anchor"></a>
+					<h3>auto<wbr>Origin</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L242">view/mxPrintPreview.d.ts:242</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if the origin should be automatically computed based on the top,
+								left corner of the actual diagram contents. The required offset will be added
+							to <a href="mxprintpreview.html#x0">x0</a> and <a href="mxprintpreview.html#y0">y0</a> in <a href="mxprintpreview.html#open">open</a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>true</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="backgroundcolor" class="tsd-anchor"></a>
+					<h3>background<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">background<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L266">view/mxPrintPreview.d.ts:266</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the color value for the page background color.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>&#39;#ffffff&#39;</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="border" class="tsd-anchor"></a>
+					<h3>border</h3>
+					<div class="tsd-signature tsd-kind-icon">border<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L212">view/mxPrintPreview.d.ts:212</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The border inset around each side of every page in the preview. This is set
+							to 0 if autoOrigin is false.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="bordercolor" class="tsd-anchor"></a>
+					<h3>border<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">border<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L271">view/mxPrintPreview.d.ts:271</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the color value for the page border.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="clipping" class="tsd-anchor"></a>
+					<h3>clipping</h3>
+					<div class="tsd-signature tsd-kind-icon">clipping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L306">view/mxPrintPreview.d.ts:306</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies is clipping should be used to avoid creating too many cell states
+								in large diagrams. The bounding box of the cells in the original diagram is
+							used if this is enabled.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>true</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="graph" class="tsd-anchor"></a>
+					<h3>graph</h3>
+					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L195">view/mxPrintPreview.d.ts:195</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the <a href="mxgraph.html">mxGraph</a> that should be previewed.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="marginbottom" class="tsd-anchor"></a>
+					<h3>margin<wbr>Bottom</h3>
+					<div class="tsd-signature tsd-kind-icon">margin<wbr>Bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L224">view/mxPrintPreview.d.ts:224</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The margin at the bottom of the page (number).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="margintop" class="tsd-anchor"></a>
+					<h3>margin<wbr>Top</h3>
+					<div class="tsd-signature tsd-kind-icon">margin<wbr>Top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L218">view/mxPrintPreview.d.ts:218</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The margin at the top of the page (number).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pagecount" class="tsd-anchor"></a>
+					<h3>page<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">page<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L298">view/mxPrintPreview.d.ts:298</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the actual number of pages in the preview.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pageformat" class="tsd-anchor"></a>
+					<h3>page<wbr>Format</h3>
+					<div class="tsd-signature tsd-kind-icon">page<wbr>Format<span class="tsd-signature-symbol">:</span> <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L200">view/mxPrintPreview.d.ts:200</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the <a href="mxrectangle.html">mxRectangle</a> that defines the page format.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pageselector" class="tsd-anchor"></a>
+					<h3>page<wbr>Selector</h3>
+					<div class="tsd-signature tsd-kind-icon">page<wbr>Selector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L283">view/mxPrintPreview.d.ts:283</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Boolean that specifies if the page selector should be
+							displayed.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>true</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="printbackgroundimage" class="tsd-anchor"></a>
+					<h3>print<wbr>Background<wbr>Image</h3>
+					<div class="tsd-signature tsd-kind-icon">print<wbr>Background<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L260">view/mxPrintPreview.d.ts:260</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if the background image should be printed.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="printcontrols" class="tsd-anchor"></a>
+					<h3>print<wbr>Controls</h3>
+					<div class="tsd-signature tsd-kind-icon">print<wbr>Controls<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L254">view/mxPrintPreview.d.ts:254</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if controls (such as folding icons) should be printed. Default is
+							false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="printoverlays" class="tsd-anchor"></a>
+					<h3>print<wbr>Overlays</h3>
+					<div class="tsd-signature tsd-kind-icon">print<wbr>Overlays<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L248">view/mxPrintPreview.d.ts:248</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if overlays should be printed.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scale" class="tsd-anchor"></a>
+					<h3>scale</h3>
+					<div class="tsd-signature tsd-kind-icon">scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L205">view/mxPrintPreview.d.ts:205</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the scale of the print preview.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="targetwindow" class="tsd-anchor"></a>
+					<h3>target<wbr>Window</h3>
+					<div class="tsd-signature tsd-kind-icon">target<wbr>Window<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Window</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L293">view/mxPrintPreview.d.ts:293</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Assign any window here to redirect the rendering in <a href="mxprintpreview.html#open">open</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L276">view/mxPrintPreview.d.ts:276</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the title of the preview window.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="wnd" class="tsd-anchor"></a>
+					<h3>wnd</h3>
+					<div class="tsd-signature tsd-kind-icon">wnd<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Window</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L288">view/mxPrintPreview.d.ts:288</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the preview window.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="x0" class="tsd-anchor"></a>
+					<h3>x0</h3>
+					<div class="tsd-signature tsd-kind-icon">x0<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L229">view/mxPrintPreview.d.ts:229</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the horizontal offset of the output.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="y0" class="tsd-anchor"></a>
+					<h3>y0</h3>
+					<div class="tsd-signature tsd-kind-icon">y0<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L234">view/mxPrintPreview.d.ts:234</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the vertical offset of the output.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addgraphfragment" class="tsd-anchor"></a>
+					<h3>add<wbr>Graph<wbr>Fragment</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Graph<wbr>Fragment<span class="tsd-signature-symbol">(</span>dx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pageNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, div<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLDivElement</span>, clip<span class="tsd-signature-symbol">: </span><a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L402">view/mxPrintPreview.d.ts:402</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a graph fragment to the given div.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dx: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Horizontal translation for the diagram.</p>
+									</div>
+								</li>
+								<li>
+									<h5>dy: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Vertical translation for the diagram.</p>
+									</div>
+								</li>
+								<li>
+									<h5>scale: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Scale for the diagram.</p>
+									</div>
+								</li>
+								<li>
+									<h5>pageNumber: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Number of the page to be rendered.</p>
+									</div>
+								</li>
+								<li>
+									<h5>div: <span class="tsd-signature-type">HTMLDivElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Div that contains the output.</p>
+									</div>
+								</li>
+								<li>
+									<h5>clip: <a href="mxrectangle.html" class="tsd-signature-type" data-tsd-kind="Class">mxRectangle</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Contains the clipping rectangle as an <a href="mxrectangle.html">mxRectangle</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addpagebreak" class="tsd-anchor"></a>
+					<h3>add<wbr>Page<wbr>Break</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Page<wbr>Break<span class="tsd-signature-symbol">(</span>doc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L349">view/mxPrintPreview.d.ts:349</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a page break to the given document.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>doc: <span class="tsd-signature-type">Document</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="appendgraph" class="tsd-anchor"></a>
+					<h3>append<wbr>Graph</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">append<wbr>Graph<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a>, scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, x0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, forcePageBreaks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, keepOpen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L327">view/mxPrintPreview.d.ts:327</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds the given graph to the existing print preview.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>graph: <a href="mxgraph.html" class="tsd-signature-type" data-tsd-kind="Class">mxGraph</a></h5>
+								</li>
+								<li>
+									<h5>scale: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>x0: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>y0: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>forcePageBreaks: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>keepOpen: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="close" class="tsd-anchor"></a>
+					<h3>close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L443">view/mxPrintPreview.d.ts:443</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Closes the print preview window.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="closedocument" class="tsd-anchor"></a>
+					<h3>close<wbr>Document</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">close<wbr>Document<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L354">view/mxPrintPreview.d.ts:354</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes the closing tags for body and page after calling <a href="mxprintpreview.html#writepostfix">writePostfix</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createpageselector" class="tsd-anchor"></a>
+					<h3>create<wbr>Page<wbr>Selector</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Selector<span class="tsd-signature-symbol">(</span>vpages<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, hpages<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLTableElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L370">view/mxPrintPreview.d.ts:370</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates the page selector table.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vpages: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>hpages: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLTableElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getappendices" class="tsd-anchor"></a>
+					<h3>get<wbr>Appendices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Appendices<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L429">view/mxPrintPreview.d.ts:429</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the pages to be added after the print output. This returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcoverpages" class="tsd-anchor"></a>
+					<h3>get<wbr>Cover<wbr>Pages</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Cover<wbr>Pages<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L424">view/mxPrintPreview.d.ts:424</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the pages to be added before the print output. This returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdoctype" class="tsd-anchor"></a>
+					<h3>get<wbr>Doctype</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Doctype<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L318">view/mxPrintPreview.d.ts:318</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the string that should go before the HTML tag in the print preview
+										page. This implementation returns an X-UA meta tag for IE5 in quirks mode,
+									IE8 in IE8 standards mode and edge in IE9 standards mode.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlinkforcellstate" class="tsd-anchor"></a>
+					<h3>get<wbr>Link<wbr>For<wbr>Cell<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L414">view/mxPrintPreview.d.ts:414</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the link for the given cell state. This returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getroot" class="tsd-anchor"></a>
+					<h3>get<wbr>Root</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Root<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L390">view/mxPrintPreview.d.ts:390</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the root cell for painting the graph.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getwindow" class="tsd-anchor"></a>
+					<h3>get<wbr>Window</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Window<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Window</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L311">view/mxPrintPreview.d.ts:311</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns <a href="mxprintpreview.html#wnd">wnd</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Window</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="insertbackgroundimage" class="tsd-anchor"></a>
+					<h3>insert<wbr>Background<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Background<wbr>Image<span class="tsd-signature-symbol">(</span>div<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLDivElement</span>, dx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L419">view/mxPrintPreview.d.ts:419</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Inserts the background image into the given div.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>div: <span class="tsd-signature-type">HTMLDivElement</span></h5>
+								</li>
+								<li>
+									<h5>dx: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>dy: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="open" class="tsd-anchor"></a>
+					<h3>open</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">(</span>css<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, targetWindow<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Window</span>, forcePageBreaks<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, keepOpen<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Window</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L344">view/mxPrintPreview.d.ts:344</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Shows the print preview window. The window is created here if it does
+									not exist.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> css: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional CSS string to be used in the head section.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> targetWindow: <span class="tsd-signature-type">Window</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional window that should be used for rendering. If
+										this is specified then no HEAD tag, CSS and BODY tag will be written.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> forcePageBreaks: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> keepOpen: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Window</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="print" class="tsd-anchor"></a>
+					<h3>print</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">print<span class="tsd-signature-symbol">(</span>css<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L438">view/mxPrintPreview.d.ts:438</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Opens the print preview and shows the print dialog.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> css: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional CSS string to be used in the head section.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="renderpage" class="tsd-anchor"></a>
+					<h3>render<wbr>Page</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">render<wbr>Page<span class="tsd-signature-symbol">(</span>w<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, h<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, dy<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, content<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span>, pageNumber<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLDivElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L385">view/mxPrintPreview.d.ts:385</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a DIV that prints a single page of the given
+										graph using the given scale and returns the DIV that
+									represents the page.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>w: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Width of the page in pixels.</p>
+									</div>
+								</li>
+								<li>
+									<h5>h: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Height of the page in pixels.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> dx: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional horizontal page offset in pixels (used internally).</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> dy: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional vertical page offset in pixels (used internally).</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> content: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Callback that adds the HTML content to the inner div of a page.
+										Takes the inner div as the argument.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pageNumber: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Integer representing the page number.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLDivElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writehead" class="tsd-anchor"></a>
+					<h3>write<wbr>Head</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Head<span class="tsd-signature-symbol">(</span>doc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span>, css<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L360">view/mxPrintPreview.d.ts:360</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes the HEAD section into the given document, without the opening
+									and closing HEAD tags.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>doc: <span class="tsd-signature-type">Document</span></h5>
+								</li>
+								<li>
+									<h5>css: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writepostfix" class="tsd-anchor"></a>
+					<h3>write<wbr>Postfix</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Postfix<span class="tsd-signature-symbol">(</span>doc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/view/mxPrintPreview.d.ts#L365">view/mxPrintPreview.d.ts:365</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called before closing the body of the page. This implementation is empty.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>doc: <span class="tsd-signature-type">Document</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mxprintpreview.html" class="tsd-kind-icon">mx<wbr>Print<wbr>Preview</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mxprintpreview.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#autoorigin" class="tsd-kind-icon">auto<wbr>Origin</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#border" class="tsd-kind-icon">border</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#bordercolor" class="tsd-kind-icon">border<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#clipping" class="tsd-kind-icon">clipping</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#graph" class="tsd-kind-icon">graph</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#marginbottom" class="tsd-kind-icon">margin<wbr>Bottom</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#margintop" class="tsd-kind-icon">margin<wbr>Top</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#pagecount" class="tsd-kind-icon">page<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#pageformat" class="tsd-kind-icon">page<wbr>Format</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#pageselector" class="tsd-kind-icon">page<wbr>Selector</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#printbackgroundimage" class="tsd-kind-icon">print<wbr>Background<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#printcontrols" class="tsd-kind-icon">print<wbr>Controls</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#printoverlays" class="tsd-kind-icon">print<wbr>Overlays</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#scale" class="tsd-kind-icon">scale</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#targetwindow" class="tsd-kind-icon">target<wbr>Window</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#wnd" class="tsd-kind-icon">wnd</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#x0" class="tsd-kind-icon">x0</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mxprintpreview.html#y0" class="tsd-kind-icon">y0</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#addgraphfragment" class="tsd-kind-icon">add<wbr>Graph<wbr>Fragment</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#addpagebreak" class="tsd-kind-icon">add<wbr>Page<wbr>Break</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#appendgraph" class="tsd-kind-icon">append<wbr>Graph</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#close" class="tsd-kind-icon">close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#closedocument" class="tsd-kind-icon">close<wbr>Document</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#createpageselector" class="tsd-kind-icon">create<wbr>Page<wbr>Selector</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getappendices" class="tsd-kind-icon">get<wbr>Appendices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getcoverpages" class="tsd-kind-icon">get<wbr>Cover<wbr>Pages</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getdoctype" class="tsd-kind-icon">get<wbr>Doctype</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getlinkforcellstate" class="tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getroot" class="tsd-kind-icon">get<wbr>Root</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#getwindow" class="tsd-kind-icon">get<wbr>Window</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#insertbackgroundimage" class="tsd-kind-icon">insert<wbr>Background<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#open" class="tsd-kind-icon">open</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#print" class="tsd-kind-icon">print</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#renderpage" class="tsd-kind-icon">render<wbr>Page</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#writehead" class="tsd-kind-icon">write<wbr>Head</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mxprintpreview.html#writepostfix" class="tsd-kind-icon">write<wbr>Postfix</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxImageExport | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mximageexport.html">mxImageExport</a>
+				</li>
+			</ul>
+			<h1>Class mxImageExport</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Creates a new image export instance to be used with an export canvas. Here
+							is an example that uses this class to create an image via a backend using
+						<mxXmlExportCanvas>.</p>
+					</div>
+					<p>(code)
+						var xmlDoc = mxUtils.createXmlDocument();
+						var root = xmlDoc.createElement(&#39;output&#39;);
+					xmlDoc.appendChild(root);</p>
+					<p>var xmlCanvas = new mxXmlCanvas2D(root);
+						var imgExport = new mxImageExport();
+					imgExport.drawState(graph.getView().getState(graph.model.root), xmlCanvas);</p>
+					<p>var bounds = graph.getGraphBounds();
+						var w = Math.ceil(bounds.x + bounds.width);
+					var h = Math.ceil(bounds.y + bounds.height);</p>
+					<p>var xml = mxUtils.getXml(root);
+						new mxXmlRequest(&#39;export&#39;, &#39;format=png&amp;w=&#39; + w +
+						&#39;&amp;h=&#39; + h + &#39;&amp;bg=#F9F7ED&amp;xml=&#39; + encodeURIComponent(xml))
+						.simulate(document, &#39;_blank&#39;);
+					(end)</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxImageExport</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mximageexport.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mximageexport.html#includeoverlays" class="tsd-kind-icon">include<wbr>Overlays</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#drawcellstate" class="tsd-kind-icon">draw<wbr>Cell<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#drawoverlays" class="tsd-kind-icon">draw<wbr>Overlays</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#drawshape" class="tsd-kind-icon">draw<wbr>Shape</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#drawstate" class="tsd-kind-icon">draw<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#drawtext" class="tsd-kind-icon">draw<wbr>Text</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#getlinkforcellstate" class="tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mximageexport.html#visitstatesrecursive" class="tsd-kind-icon">visit<wbr>States<wbr>Recursive</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Image<wbr>Export<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mximageexport.html" class="tsd-signature-type" data-tsd-kind="Class">mxImageExport</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L28">util/mxImageExport.d.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an instance of mxImageExport.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>mxImageExport</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mximageexport.html" class="tsd-signature-type" data-tsd-kind="Class">mxImageExport</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="includeoverlays" class="tsd-anchor"></a>
+					<h3>include<wbr>Overlays</h3>
+					<div class="tsd-signature tsd-kind-icon">include<wbr>Overlays<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L38">util/mxImageExport.d.ts:38</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies if overlays should be included in the export. Default is false.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drawcellstate" class="tsd-anchor"></a>
+					<h3>draw<wbr>Cell<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>Cell<wbr>State<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L64">util/mxImageExport.d.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Draws the given state to the given canvas.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drawoverlays" class="tsd-anchor"></a>
+					<h3>draw<wbr>Overlays</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>Overlays<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L84">util/mxImageExport.d.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: drawOverlays</p>
+								</div>
+								<p>Draws the overlays for the given state. This is called if <includeOverlays>
+								is true.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drawshape" class="tsd-anchor"></a>
+					<h3>draw<wbr>Shape</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>Shape<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L71">util/mxImageExport.d.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: drawShape</p>
+								</div>
+								<p>Draws the shape of the given state.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drawstate" class="tsd-anchor"></a>
+					<h3>draw<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>State<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L43">util/mxImageExport.d.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Draws the given state and all its descendants to the given canvas.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="drawtext" class="tsd-anchor"></a>
+					<h3>draw<wbr>Text</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>Text<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L76">util/mxImageExport.d.ts:76</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Draws the text of the given state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlinkforcellstate" class="tsd-anchor"></a>
+					<h3>get<wbr>Link<wbr>For<wbr>Cell<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L59">util/mxImageExport.d.ts:59</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the link for the given cell state and canvas. This returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="visitstatesrecursive" class="tsd-anchor"></a>
+					<h3>visit<wbr>States<wbr>Recursive</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">visit<wbr>States<wbr>Recursive<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a>, visitor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/util/mxImageExport.d.ts#L50">util/mxImageExport.d.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function: drawState</p>
+								</div>
+								<p>Draws the given state and all its descendants to the given canvas.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+								</li>
+								<li>
+									<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+								</li>
+								<li>
+									<h5>visitor: <span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a>, canvas<span class="tsd-signature-symbol">: </span><a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>state: <a href="mxcellstate.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellState</a></h5>
+														</li>
+														<li>
+															<h5>canvas: <a href="mxabstractcanvas2d.html" class="tsd-signature-type" data-tsd-kind="Class">mxAbstractCanvas2D</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mximageexport.html" class="tsd-kind-icon">mx<wbr>Image<wbr>Export</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mximageexport.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mximageexport.html#includeoverlays" class="tsd-kind-icon">include<wbr>Overlays</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#drawcellstate" class="tsd-kind-icon">draw<wbr>Cell<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#drawoverlays" class="tsd-kind-icon">draw<wbr>Overlays</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#drawshape" class="tsd-kind-icon">draw<wbr>Shape</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#drawstate" class="tsd-kind-icon">draw<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#drawtext" class="tsd-kind-icon">draw<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#getlinkforcellstate" class="tsd-kind-icon">get<wbr>Link<wbr>For<wbr>Cell<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mximageexport.html#visitstatesrecursive" class="tsd-kind-icon">visit<wbr>States<wbr>Recursive</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

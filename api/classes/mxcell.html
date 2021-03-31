@@ -1,0 +1,2229 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>mxCell | mxGraph Typescript Declarations</title>
+	<meta name="description" content="Documentation for mxGraph Typescript Declarations">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">mxGraph Typescript Declarations</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">mxGraph Typescript Declarations</a>
+				</li>
+				<li>
+					<a href="mxcell.html">mxCell</a>
+				</li>
+			</ul>
+			<h1>Class mxCell</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Cells are the elements of the graph model. They represent the state
+						of the groups, vertices and edges in a graph.</p>
+					</div>
+					<a href="#custom-attributes" id="custom-attributes" style="color: inherit; text-decoration: none;">
+						<h3>Custom attributes</h3>
+					</a>
+					<p>For custom attributes we recommend using an XML node as the value of a cell.
+					The following code can be used to create a cell with an XML node as the value:</p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">doc</span><span style="color: #000000"> = </span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">createXmlDocument</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000"> = </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #795E26">createElement</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;MyNode&#039;</span><span style="color: #000000">)</span>
+<span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;label&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;MyLabel&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;attribute1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;value1&#039;</span><span style="color: #000000">);</span>
+<span style="color: #001080">graph</span><span style="color: #000000">.</span><span style="color: #795E26">insertVertex</span><span style="color: #000000">(</span><span style="color: #001080">graph</span><span style="color: #000000">.</span><span style="color: #795E26">getDefaultParent</span><span style="color: #000000">(), </span><span style="color: #0000FF">null</span><span style="color: #000000">, </span><span style="color: #001080">node</span><span style="color: #000000">, </span><span style="color: #098658">40</span><span style="color: #000000">, </span><span style="color: #098658">40</span><span style="color: #000000">, </span><span style="color: #098658">80</span><span style="color: #000000">, </span><span style="color: #098658">30</span><span style="color: #000000">);</span>
+</code></pre>
+							<p>For the label to work, <a href="mxgraph.html#convertvaluetostring">mxGraph.convertValueToString</a> and
+							<a href="mxgraph.html#celllabelchanged">mxGraph.cellLabelChanged</a> should be overridden as follows:</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #001080">graph</span><span style="color: #000000">.</span><span style="color: #795E26">convertValueToString</span><span style="color: #000000">(</span><span style="color: #001080">cell</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isNode</span><span style="color: #000000">(</span><span style="color: #001080">cell</span><span style="color: #000000">.</span><span style="color: #001080">value</span><span style="color: #000000">))</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">cell</span><span style="color: #000000">.</span><span style="color: #795E26">getAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;label&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">cellLabelChanged</span><span style="color: #000000"> = </span><span style="color: #001080">graph</span><span style="color: #000000">.</span><span style="color: #001080">cellLabelChanged</span><span style="color: #000000">;</span>
+<span style="color: #001080">graph</span><span style="color: #000000">.</span><span style="color: #795E26">cellLabelChanged</span><span style="color: #000000">(</span><span style="color: #001080">cell</span><span style="color: #000000">, </span><span style="color: #001080">newValue</span><span style="color: #000000">, </span><span style="color: #001080">autoSize</span><span style="color: #000000">)</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">mxUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isNode</span><span style="color: #000000">(</span><span style="color: #001080">cell</span><span style="color: #000000">.</span><span style="color: #001080">value</span><span style="color: #000000">))</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Clones the value for correct undo/redo</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">elt</span><span style="color: #000000"> = </span><span style="color: #001080">cell</span><span style="color: #000000">.</span><span style="color: #001080">value</span><span style="color: #000000">.</span><span style="color: #795E26">cloneNode</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">elt</span><span style="color: #000000">.</span><span style="color: #795E26">setAttribute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;label&#039;</span><span style="color: #000000">, </span><span style="color: #001080">newValue</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">newValue</span><span style="color: #000000"> = </span><span style="color: #001080">elt</span><span style="color: #000000">;</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">cellLabelChanged</span><span style="color: #000000">.</span><span style="color: #795E26">apply</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">, </span><span style="color: #0000FF">arguments</span><span style="color: #000000">);</span>
+<span style="color: #000000">};</span>
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">mxCell</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-kind-class">
+				<h3 class="tsd-before-signature">Indexable</h3>
+				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Cells are the elements of the graph model. They represent the state
+						of the groups, vertices and edges in a graph.</p>
+					</div>
+					<a href="#custom-attributes" id="custom-attributes" style="color: inherit; text-decoration: none;">
+						<h3>Custom attributes</h3>
+					</a>
+					<p>For custom attributes we recommend using an XML node as the value of a cell.
+					The following code can be used to create a cell with an XML node as the value:</p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mxcell.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#children" class="tsd-kind-icon">children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#collapsed" class="tsd-kind-icon">collapsed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#connectable" class="tsd-kind-icon">connectable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#edge" class="tsd-kind-icon">edge</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#edges" class="tsd-kind-icon">edges</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#geometry" class="tsd-kind-icon">geometry</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#mxtransient" class="tsd-kind-icon">mx<wbr>Transient</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#overlays" class="tsd-kind-icon">overlays</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#parent" class="tsd-kind-icon">parent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#style" class="tsd-kind-icon">style</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#vertex" class="tsd-kind-icon">vertex</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mxcell.html#visible" class="tsd-kind-icon">visible</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#clonevalue" class="tsd-kind-icon">clone<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getattribute" class="tsd-kind-icon">get<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getchildat" class="tsd-kind-icon">get<wbr>Child<wbr>At</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getchildcount" class="tsd-kind-icon">get<wbr>Child<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getedgeat" class="tsd-kind-icon">get<wbr>Edge<wbr>At</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getedgecount" class="tsd-kind-icon">get<wbr>Edge<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getedgeindex" class="tsd-kind-icon">get<wbr>Edge<wbr>Index</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getgeometry" class="tsd-kind-icon">get<wbr>Geometry</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getid" class="tsd-kind-icon">get<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getindex" class="tsd-kind-icon">get<wbr>Index</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getparent" class="tsd-kind-icon">get<wbr>Parent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getstyle" class="tsd-kind-icon">get<wbr>Style</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getterminal" class="tsd-kind-icon">get<wbr>Terminal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#getvalue" class="tsd-kind-icon">get<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#hasattribute" class="tsd-kind-icon">has<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#insertedge" class="tsd-kind-icon">insert<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#iscollapsed" class="tsd-kind-icon">is<wbr>Collapsed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#isconnectable" class="tsd-kind-icon">is<wbr>Connectable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#isedge" class="tsd-kind-icon">is<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#isvertex" class="tsd-kind-icon">is<wbr>Vertex</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#removeedge" class="tsd-kind-icon">remove<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#removefromparent" class="tsd-kind-icon">remove<wbr>From<wbr>Parent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#removefromterminal" class="tsd-kind-icon">remove<wbr>From<wbr>Terminal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setattribute" class="tsd-kind-icon">set<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setcollapsed" class="tsd-kind-icon">set<wbr>Collapsed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setconnectable" class="tsd-kind-icon">set<wbr>Connectable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setedge" class="tsd-kind-icon">set<wbr>Edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setgeometry" class="tsd-kind-icon">set<wbr>Geometry</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setid" class="tsd-kind-icon">set<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setparent" class="tsd-kind-icon">set<wbr>Parent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setstyle" class="tsd-kind-icon">set<wbr>Style</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setterminal" class="tsd-kind-icon">set<wbr>Terminal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setvalue" class="tsd-kind-icon">set<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setvertex" class="tsd-kind-icon">set<wbr>Vertex</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mxcell.html#valuechanged" class="tsd-kind-icon">value<wbr>Changed</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new mx<wbr>Cell<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, geometry<span class="tsd-signature-symbol">?: </span><a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a>, style<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L47">model/mxCell.d.ts:47</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional object that represents the cell value.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> geometry: <a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional <mxGeometry> that specifies the geometry.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> style: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional formatted string that defines the style.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="children" class="tsd-anchor"></a>
+					<h3>children</h3>
+					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L126">model/mxCell.d.ts:126</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the child cells.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="collapsed" class="tsd-anchor"></a>
+					<h3>collapsed</h3>
+					<div class="tsd-signature tsd-kind-icon">collapsed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L106">model/mxCell.d.ts:106</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies whether the cell is collapsed. Default is false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="connectable" class="tsd-anchor"></a>
+					<h3>connectable</h3>
+					<div class="tsd-signature tsd-kind-icon">connectable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L96">model/mxCell.d.ts:96</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies whether the cell is connectable. Default is true.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="edge" class="tsd-anchor"></a>
+					<h3>edge</h3>
+					<div class="tsd-signature tsd-kind-icon">edge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L91">model/mxCell.d.ts:91</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies whether the cell is an edge. Default is false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="edges" class="tsd-anchor"></a>
+					<h3>edges</h3>
+					<div class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">:</span> <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L131">model/mxCell.d.ts:131</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the edges.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="geometry" class="tsd-anchor"></a>
+					<h3>geometry</h3>
+					<div class="tsd-signature tsd-kind-icon">geometry<span class="tsd-signature-symbol">:</span> <a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L75">model/mxCell.d.ts:75</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the <mxGeometry>. Default is null.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L65">model/mxCell.d.ts:65</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the Id. Default is null.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mxtransient" class="tsd-anchor"></a>
+					<h3>mx<wbr>Transient</h3>
+					<div class="tsd-signature tsd-kind-icon">mx<wbr>Transient<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L140">model/mxCell.d.ts:140</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List of members that should not be cloned inside <clone>. This field is
+									passed to &lt;mxUtils.clone&gt; and is not made persistent in <mxCellCodec>.
+										This is not a convention for all classes, it is only used in this class
+										to mark transient fields since transient modifiers are not supported by
+							the language.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="overlays" class="tsd-anchor"></a>
+					<h3>overlays</h3>
+					<div class="tsd-signature tsd-kind-icon">overlays<span class="tsd-signature-symbol">:</span> <a href="mxcelloverlay.html" class="tsd-signature-type" data-tsd-kind="Class">mxCellOverlay</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L60">model/mxCell.d.ts:60</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>{mxGraph.getCellOverlays}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="parent" class="tsd-anchor"></a>
+					<h3>parent</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L111">model/mxCell.d.ts:111</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the parent cell.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="source" class="tsd-anchor"></a>
+					<h3>source</h3>
+					<div class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">:</span> <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L116">model/mxCell.d.ts:116</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the source terminal.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="style" class="tsd-anchor"></a>
+					<h3>style</h3>
+					<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L81">model/mxCell.d.ts:81</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the style as a string of the form [(stylename|key=value);]. Default is
+							null.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="target" class="tsd-anchor"></a>
+					<h3>target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L121">model/mxCell.d.ts:121</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the target terminal.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L70">model/mxCell.d.ts:70</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Holds the user object. Default is null.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vertex" class="tsd-anchor"></a>
+					<h3>vertex</h3>
+					<div class="tsd-signature tsd-kind-icon">vertex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L86">model/mxCell.d.ts:86</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies whether the cell is a vertex. Default is false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3>visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L101">model/mxCell.d.ts:101</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Specifies whether the cell is visible. Default is true.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L442">model/mxCell.d.ts:442</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a clone of the cell. Uses <cloneValue> to clone
+											the user object. All fields in <mxTransient> are ignored
+									during the cloning.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clonevalue" class="tsd-anchor"></a>
+					<h3>clone<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>Value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L447">model/mxCell.d.ts:447</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a clone of the cell&#39;s user object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattribute" class="tsd-anchor"></a>
+					<h3>get<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attribute<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L425">model/mxCell.d.ts:425</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the specified attribute from the user object if it is an XML
+									node.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>defaultValue: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getchildat" class="tsd-anchor"></a>
+					<h3>get<wbr>Child<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Child<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L318">model/mxCell.d.ts:318</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the child at the specified index.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getchildcount" class="tsd-anchor"></a>
+					<h3>get<wbr>Child<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Child<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L300">model/mxCell.d.ts:300</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of child cells.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getedgeat" class="tsd-anchor"></a>
+					<h3>get<wbr>Edge<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Edge<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L372">model/mxCell.d.ts:372</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the edge at the specified index in <edges>.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getedgecount" class="tsd-anchor"></a>
+					<h3>get<wbr>Edge<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Edge<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L354">model/mxCell.d.ts:354</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of edges in the edge array.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getedgeindex" class="tsd-anchor"></a>
+					<h3>get<wbr>Edge<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Edge<wbr>Index<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L363">model/mxCell.d.ts:363</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the index of the specified edge in <edges>.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>edge: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getgeometry" class="tsd-anchor"></a>
+					<h3>get<wbr>Geometry</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Geometry<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L175">model/mxCell.d.ts:175</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the <mxGeometry> that describes the <geometry>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getid" class="tsd-anchor"></a>
+					<h3>get<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L145">model/mxCell.d.ts:145</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the Id of the cell as a string.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getindex" class="tsd-anchor"></a>
+					<h3>get<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Index<span class="tsd-signature-symbol">(</span>child<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L309">model/mxCell.d.ts:309</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the index of the specified child in the child array.</p>
+								</div>
+								<p>Parameters:</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>child: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getparent" class="tsd-anchor"></a>
+					<h3>get<wbr>Parent</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Parent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L267">model/mxCell.d.ts:267</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the cell&#39;s parent.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getstyle" class="tsd-anchor"></a>
+					<h3>get<wbr>Style</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Style<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L185">model/mxCell.d.ts:185</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a string that describes the <style>.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="getterminal" class="tsd-anchor"></a>
+        <h3>get<wbr>Terminal</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">get<wbr>Terminal<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L286">model/mxCell.d.ts:286</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns the source or target terminal.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>source: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the source terminal should be
+returned.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="getvalue" class="tsd-anchor"></a>
+        <h3>get<wbr>Value</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">get<wbr>Value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L156">model/mxCell.d.ts:156</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns the user object of the cell. The user
+object is stored in <value>.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="hasattribute" class="tsd-anchor"></a>
+        <h3>has<wbr>Attribute</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">has<wbr>Attribute<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L413">model/mxCell.d.ts:413</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the user object is an XML node that contains the given
+attribute.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>name: <span class="tsd-signature-type">string</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="insert" class="tsd-anchor"></a>
+        <h3>insert</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>child<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L332">model/mxCell.d.ts:332</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Inserts the specified child into the child array at the specified index
+and updates the parent reference of the child. If not childIndex is
+specified then the child is appended to the child array. Returns the
+inserted child.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>child: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+
+                
+            </li>
+            <li>
+                <h5>index: <span class="tsd-signature-type">number</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="insertedge" class="tsd-anchor"></a>
+        <h3>insert<wbr>Edge</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">insert<wbr>Edge<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, isOutgoing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L383">model/mxCell.d.ts:383</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Inserts the specified edge into the edge array and returns the edge.
+Will update the respective terminal reference of the edge.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>edge: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p><mxCell> to be inserted into the edge array.</p>
+
+        </div>
+
+            </li>
+            <li>
+                <h5>isOutgoing: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the edge is outgoing.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="iscollapsed" class="tsd-anchor"></a>
+        <h3>is<wbr>Collapsed</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">is<wbr>Collapsed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L253">model/mxCell.d.ts:253</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the cell is collapsed.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="isconnectable" class="tsd-anchor"></a>
+        <h3>is<wbr>Connectable</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">is<wbr>Connectable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L225">model/mxCell.d.ts:225</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the cell is connectable.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="isedge" class="tsd-anchor"></a>
+        <h3>is<wbr>Edge</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">is<wbr>Edge<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L210">model/mxCell.d.ts:210</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the cell is an edge.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="isvertex" class="tsd-anchor"></a>
+        <h3>is<wbr>Vertex</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">is<wbr>Vertex<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L195">model/mxCell.d.ts:195</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the cell is a vertex.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="isvisible" class="tsd-anchor"></a>
+        <h3>is<wbr>Visible</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L239">model/mxCell.d.ts:239</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Returns true if the cell is visibile.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="remove" class="tsd-anchor"></a>
+        <h3>remove</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L344">model/mxCell.d.ts:344</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Removes the child at the specified index from the child array and
+returns the child that was removed. Will remove the parent reference of
+the child.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>index: <span class="tsd-signature-type">number</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="removeedge" class="tsd-anchor"></a>
+        <h3>remove<wbr>Edge</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">remove<wbr>Edge<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, isOutgoing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L394">model/mxCell.d.ts:394</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Removes the specified edge from the edge array and returns the edge.
+Will remove the respective terminal reference from the edge.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>edge: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+
+                
+            </li>
+            <li>
+                <h5>isOutgoing: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the edge is outgoing.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="removefromparent" class="tsd-anchor"></a>
+        <h3>remove<wbr>From<wbr>Parent</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">remove<wbr>From<wbr>Parent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L349">model/mxCell.d.ts:349</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Removes the cell from its parent.</p>
+
+                </div>
+        </div>
+
+
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="removefromterminal" class="tsd-anchor"></a>
+        <h3>remove<wbr>From<wbr>Terminal</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">remove<wbr>From<wbr>Terminal<span class="tsd-signature-symbol">(</span>isSource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L403">model/mxCell.d.ts:403</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Removes the edge from its source or target terminal.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>isSource: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the edge should be removed from its source or target terminal.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setattribute" class="tsd-anchor"></a>
+        <h3>set<wbr>Attribute</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Attribute<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L435">model/mxCell.d.ts:435</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the specified attribute on the user object if it is an XML node.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>name: <span class="tsd-signature-type">string</span></h5>
+
+                
+            </li>
+            <li>
+                <h5>value: <span class="tsd-signature-type">any</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setcollapsed" class="tsd-anchor"></a>
+        <h3>set<wbr>Collapsed</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Collapsed<span class="tsd-signature-symbol">(</span>collapsed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L262">model/mxCell.d.ts:262</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the collapsed state.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>collapsed: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies the new collapsed state.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setconnectable" class="tsd-anchor"></a>
+        <h3>set<wbr>Connectable</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Connectable<span class="tsd-signature-symbol">(</span>connectable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L234">model/mxCell.d.ts:234</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the connectable state.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>connectable: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies the new connectable state.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setedge" class="tsd-anchor"></a>
+        <h3>set<wbr>Edge</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Edge<span class="tsd-signature-symbol">(</span>edge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L220">model/mxCell.d.ts:220</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Specifies if the cell is an edge. This should only be assigned at
+construction of the cell and not be changed during its lifecycle.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>edge: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the cell is an edge.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setgeometry" class="tsd-anchor"></a>
+        <h3>set<wbr>Geometry</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Geometry<span class="tsd-signature-symbol">(</span>geometry<span class="tsd-signature-symbol">: </span><a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L180">model/mxCell.d.ts:180</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the <mxGeometry> to be used as the <geometry>.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>geometry: <a href="mxgeometry.html" class="tsd-signature-type" data-tsd-kind="Class">mxGeometry</a></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setid" class="tsd-anchor"></a>
+        <h3>set<wbr>Id</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Id<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L150">model/mxCell.d.ts:150</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the Id of the cell to the given string.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>id: <span class="tsd-signature-type">string</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setparent" class="tsd-anchor"></a>
+        <h3>set<wbr>Parent</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Parent<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L276">model/mxCell.d.ts:276</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the parent cell.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>parent: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setstyle" class="tsd-anchor"></a>
+        <h3>set<wbr>Style</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Style<span class="tsd-signature-symbol">(</span>style<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L190">model/mxCell.d.ts:190</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the string to be used as the <style>.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>style: <span class="tsd-signature-type">string</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setterminal" class="tsd-anchor"></a>
+        <h3>set<wbr>Terminal</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Terminal<span class="tsd-signature-symbol">(</span>terminal<span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a>, isSource<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L295">model/mxCell.d.ts:295</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the source or target terminal and returns the new terminal.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>terminal: <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>mxCell that represents the new source or target terminal.</p>
+
+        </div>
+
+            </li>
+            <li>
+                <h5>isSource: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>boolean that specifies if the source or target terminal
+should be set.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <a href="mxcell.html" class="tsd-signature-type" data-tsd-kind="Class">mxCell</a></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setvalue" class="tsd-anchor"></a>
+        <h3>set<wbr>Value</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L162">model/mxCell.d.ts:162</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Sets the user object of the cell. The user object
+is stored in <value>.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>value: <span class="tsd-signature-type">any</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setvertex" class="tsd-anchor"></a>
+        <h3>set<wbr>Vertex</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Vertex<span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L205">model/mxCell.d.ts:205</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Specifies if the cell is a vertex. This should only be assigned at
+construction of the cell and not be changed during its lifecycle.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>vertex: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies if the cell is a vertex.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="setvisible" class="tsd-anchor"></a>
+        <h3>set<wbr>Visible</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">set<wbr>Visible<span class="tsd-signature-symbol">(</span>visible<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L248">model/mxCell.d.ts:248</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Specifies if the cell is visible.</p>
+
+                </div>
+                <p>Parameters:</p>
+
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>visible: <span class="tsd-signature-type">boolean</span></h5>
+
+                        <div class="tsd-comment tsd-typography">
+                <p>Boolean that specifies the new visible state.</p>
+
+        </div>
+
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+                <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+    <a name="valuechanged" class="tsd-anchor"></a>
+        <h3>value<wbr>Changed</h3>
+
+        <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+        <li class="tsd-signature tsd-kind-icon">value<wbr>Changed<span class="tsd-signature-symbol">(</span>newValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+</ul>
+
+<ul class="tsd-descriptions">
+        <li class="tsd-description">
+                <aside class="tsd-sources">
+        <ul>
+                    <li>Defined in <a href="https://github.com/tbouffard/typed-mxgraph/blob/7efe0fc/lib/model/mxCell.d.ts#L170">model/mxCell.d.ts:170</a></li>
+        </ul>
+</aside>
+        <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                    <p>Changes the user object after an in-place edit
+and returns the previous value. This implementation
+replaces the user object with the given value and
+returns the old user object.</p>
+
+                </div>
+        </div>
+
+
+    <h4 class="tsd-parameters-title">Parameters</h4>
+    <ul class="tsd-parameters">
+            <li>
+                <h5>newValue: <span class="tsd-signature-type">any</span></h5>
+
+                
+            </li>
+    </ul>
+
+    <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+
+
+        </li>
+</ul>
+    
+
+</section>
+    </section>
+
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+            <nav class="tsd-navigation primary">
+                <ul>
+                                    <li class=" ">
+                <a href="../index.html">Exports</a>
+            </li>
+                </ul>
+            </nav>
+
+            <nav class="tsd-navigation secondary menu-sticky">
+                <ul class="before-current">
+                            </ul>
+    <ul class="current">
+<li class="current tsd-kind-class">
+    <a href="mxcell.html" class="tsd-kind-icon">mx<wbr>Cell</a>
+        <ul>
+                <li class=" tsd-kind-constructor tsd-parent-kind-class">
+    <a href="mxcell.html#constructor" class="tsd-kind-icon">constructor</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#children" class="tsd-kind-icon">children</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#collapsed" class="tsd-kind-icon">collapsed</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#connectable" class="tsd-kind-icon">connectable</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#edge" class="tsd-kind-icon">edge</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#edges" class="tsd-kind-icon">edges</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#geometry" class="tsd-kind-icon">geometry</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#id" class="tsd-kind-icon">id</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#mxtransient" class="tsd-kind-icon">mx<wbr>Transient</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#overlays" class="tsd-kind-icon">overlays</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#parent" class="tsd-kind-icon">parent</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#source" class="tsd-kind-icon">source</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#style" class="tsd-kind-icon">style</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#target" class="tsd-kind-icon">target</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#value" class="tsd-kind-icon">value</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#vertex" class="tsd-kind-icon">vertex</a>
+</li>
+                <li class=" tsd-kind-property tsd-parent-kind-class">
+    <a href="mxcell.html#visible" class="tsd-kind-icon">visible</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#clone" class="tsd-kind-icon">clone</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#clonevalue" class="tsd-kind-icon">clone<wbr>Value</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getattribute" class="tsd-kind-icon">get<wbr>Attribute</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getchildat" class="tsd-kind-icon">get<wbr>Child<wbr>At</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getchildcount" class="tsd-kind-icon">get<wbr>Child<wbr>Count</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getedgeat" class="tsd-kind-icon">get<wbr>Edge<wbr>At</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getedgecount" class="tsd-kind-icon">get<wbr>Edge<wbr>Count</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getedgeindex" class="tsd-kind-icon">get<wbr>Edge<wbr>Index</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getgeometry" class="tsd-kind-icon">get<wbr>Geometry</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getid" class="tsd-kind-icon">get<wbr>Id</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getindex" class="tsd-kind-icon">get<wbr>Index</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getparent" class="tsd-kind-icon">get<wbr>Parent</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getstyle" class="tsd-kind-icon">get<wbr>Style</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getterminal" class="tsd-kind-icon">get<wbr>Terminal</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#getvalue" class="tsd-kind-icon">get<wbr>Value</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#hasattribute" class="tsd-kind-icon">has<wbr>Attribute</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#insert" class="tsd-kind-icon">insert</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#insertedge" class="tsd-kind-icon">insert<wbr>Edge</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#iscollapsed" class="tsd-kind-icon">is<wbr>Collapsed</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#isconnectable" class="tsd-kind-icon">is<wbr>Connectable</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#isedge" class="tsd-kind-icon">is<wbr>Edge</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#isvertex" class="tsd-kind-icon">is<wbr>Vertex</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#remove" class="tsd-kind-icon">remove</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#removeedge" class="tsd-kind-icon">remove<wbr>Edge</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#removefromparent" class="tsd-kind-icon">remove<wbr>From<wbr>Parent</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#removefromterminal" class="tsd-kind-icon">remove<wbr>From<wbr>Terminal</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setattribute" class="tsd-kind-icon">set<wbr>Attribute</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setcollapsed" class="tsd-kind-icon">set<wbr>Collapsed</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setconnectable" class="tsd-kind-icon">set<wbr>Connectable</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setedge" class="tsd-kind-icon">set<wbr>Edge</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setgeometry" class="tsd-kind-icon">set<wbr>Geometry</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setid" class="tsd-kind-icon">set<wbr>Id</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setparent" class="tsd-kind-icon">set<wbr>Parent</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setstyle" class="tsd-kind-icon">set<wbr>Style</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setterminal" class="tsd-kind-icon">set<wbr>Terminal</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setvalue" class="tsd-kind-icon">set<wbr>Value</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setvertex" class="tsd-kind-icon">set<wbr>Vertex</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#setvisible" class="tsd-kind-icon">set<wbr>Visible</a>
+</li>
+                <li class=" tsd-kind-method tsd-parent-kind-class">
+    <a href="mxcell.html#valuechanged" class="tsd-kind-icon">value<wbr>Changed</a>
+</li>
+        </ul>
+</li>
+    </ul>
+    <ul class="after-current">
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<footer class="with-border-bottom">
+    <div class="container">
+        <h2>Legend</h2>
+        <div class="tsd-legend-group">
+                <ul class="tsd-legend">
+                        <li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+                        <li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+                        <li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+                </ul>
+                <ul class="tsd-legend">
+                        <li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+                        <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+                        <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+                </ul>
+                <ul class="tsd-legend">
+                        <li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+                        <li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+                </ul>
+                <ul class="tsd-legend">
+                        <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+                        <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+                </ul>
+                <ul class="tsd-legend">
+                        <li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+                        <li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+                </ul>
+        </div>
+    </div>
+</footer>
+
+    <div class="container tsd-generator">
+        <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+    </div>
+
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+
+
+</body>
+</html>
